@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        /* body {
+            background-image: url('./header.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+        } */
+
+        body {
+            color: white;
+            background-color: rgb(9, 11, 58);
+        }
+
+        header {
+            background-image: url("./Assets/safs.jpg");
+            background-size: cover;
+            position: relative;
+            height: 200px;
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+
+        .abc {
+
+            background-color: white;
+            color: black;
+            font-size: 400%;
+            font-weight: bold;
+            margin: 0 auto;
+            padding: 10px;
+            width: 40%;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: screen;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .abc {
+                font-size: 180%;
+
+            }
+
+            header {
+                background-image: url("./Assets/header.jpg");
+
+            }
+        }
+
+        .test2 {
+            justify-content: center;
+            min-height: calc(100vh - 22.5rem);
+            margin-bottom: 7.2rem;
+            /* height: 10px; */
+        }
+
+        .test {
+            justify-content: center;
+            min-height: calc(100vh - 22.5rem);
+            margin-bottom: 7.2rem;
+        }
+
+        .arrow {
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        @media only screen and (min-width: 1000px) {
+
+            /* Medium and Large devices (laptops/desktops, 800px and up) */
+            .navbar-nav {
+                position: absolute;
+                right: 4%;
+            }
+
+            .navbar-brand {
+                margin-left: 1%;
+            }
+        }
+
+        .navbar {
+            padding-top: 0.1rem;
+            padding-bottom: 0.1rem;
+        }
+
+        .Hero__arrow {
+            position: absolute;
+            bottom: 24px;
+            right: 50%
+        }
+
+        /* .navbar{} */
+        #navbarNavDropdown {
+            background-color: rgb(9, 11, 58);
+            color: white;
+        }
+
+        /* vithu notes for card */
+        h5 {
+            color: black;
+            font-weight: bolder;
+        }
+
+        p {
+            color: black;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+        }
+    </style>
+    <header>
+        <h1 class="abc">Financial Website</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid" style="background-color: rgb(9, 11, 58) ;">
+            <a class="navbar-brand" href="#" style="background-color: rgb(9, 11, 58) ;color: white;">Financial Education
+                101</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
+                style="background-color:white">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav nav-tabs ">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#" style="color: rgb(9, 11, 58) ;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link li1" href="#" style="color: white;">Flashcards</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active li1" href="#" style="color:  rgb(9, 11, 58);">Stock News</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle centertabs" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                            Video Lectures
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white;">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--THIS IS FOR THE STOCK NEWS -->
+
+    <br>
+    <!--CARD 1-->
+    <div class="carousel-inner">
+        <div class="item active">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <h5 class="card-title" id="title1" >Card title</h5>
+              <div class="col-md-12">
+                <img src="..." alt="..." style= "max-width: 100%" id="thumbNail">
+                <div class="card-body">
+                  <p class="card-text" id="summary">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Source: Bloomberg</small></p>
+                </div>
+            </div>
+            </div>
+          </div>
+    </div>
+
+
+    <!--CARD 2-->
+    
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" >Title goes here</h5>
+                        <img src="https://investorplace.com/wp-content/uploads/2020/07/aapl-stock-2.jpg"
+                            class="card-img-top" alt="...">
+                        <p class="card-text" >With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Read more here</a>
+                        <p class="card-text"><small class="text-muted">Source: bloomberg </small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    <!--CARD 3-->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Title goes here</h5>
+                        <img src="https://investorplace.com/wp-content/uploads/2020/07/aapl-stock-2.jpg"
+                            class="card-img-top" alt="...">
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Read more here</a>
+                        <p class="card-text"><small class="text-muted">Source: bloomberg </small></p>
+                    </div>
+                </div>
+            </div>
+
+            
+        <!--CARD 4-->
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Title goes here</h5>
+                        <img src="https://investorplace.com/wp-content/uploads/2020/07/aapl-stock-2.jpg"
+                            class="card-img-top" alt="...">
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Read more here</a>
+                        <p class="card-text"><small class="text-muted">Source: bloomberg </small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <br>
+    
+    <!--CARD 5-->
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Title goes here</h5>
+                    <img src="https://investorplace.com/wp-content/uploads/2020/07/aapl-stock-2.jpg"
+                        class="card-img-top" alt="...">
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Read more here</a>
+                    <p class="card-text"><small class="text-muted">Source: bloomberg </small></p>
+                </div>
+            </div>
+        </div>
+
+        
+    <!--CARD 6-->
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Title goes here</h5>
+                    <img src="https://investorplace.com/wp-content/uploads/2020/07/aapl-stock-2.jpg"
+                        class="card-img-top" alt="...">
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Read more here</a>
+                    <p class="card-text"><small class="text-muted">Source: bloomberg </small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+ </div>
+
+    <!-- <ul class="nav nav-tabs  " >
+        <li class="nav-item" >
+            <a class="nav-link active" aria-current="page" href="#">Flashcards</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false" style="color: white;">Video Lectures</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"  style="color: white;">Stock News</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="#"  style="color: white;" >About Us</a>
+        </li>
+    </ul> -->
+    <div class="container full-height test">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+            </div>
+
+            <div class="col-3"></div>
+        </div>
+        <i class="arrow down Hero__arrow"></i>
+
+    </div>
+    <!-- <div class="test2" style="background-color: white;">
+        sapfmsa
+    </div> -->
+
+    <script>
+
+// async function stockPrice() {
+// fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/news/v2/get-details?uuid=9803606d-a324-3864-83a8-2bd621e6ccbd&region=US", {
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-key": "1f35cd15e2msh6ebb19f225d0159p1d534djsn08377cdf56bd",
+// 		"x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
+// 	}
+// })
+// .then(response => {
+// 	console.log(response);
+// })
+// .catch(err => {
+// 	console.error(err);
+// });
+
+// }
+
+// var test
+// async function stockPrice() {
+//   test = await fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/news/v2/get-details?uuid=9803606d-a324-3864-83a8-2bd621e6ccbd&region=US", {
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-key": "1f35cd15e2msh6ebb19f225d0159p1d534djsn08377cdf56bd",
+// 		"x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
+// 	}
+// })
+// .then(response => response.json()) 
+// console.log(test)
+// // TO INPUT TITLE
+// document.getElementById('title1').innerText= test.data.contents[0]["content"]["title"]
+// // TO INPUT IMAGE
+// // document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
+// // TO INPUT SUMMARY 
+// document.getElementById('summary').innerText= test.data.contents[0].content["summary"]
+
+// }
+
+
+
+        async function stockPrice() {
+            await fetch("https://bloomberg-market-and-financial-news.p.rapidapi.com/news/list-by-region?id=canada-home-v3", {
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-key": "91acb173aamshe3a7ddc6687c44dp1d40fbjsnf966ff909dce",
+                    "x-rapidapi-host": "bloomberg-market-and-financial-news.p.rapidapi.com"
+                }
+            })
+                .then(response => response.json()).then(data => { 
+console.log(data)
+// CARD 1 DATA: 
+// to get the title
+document.getElementById('title1').innerText= data.indexBar.stories[0].title
+// to get the thumbnail
+document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
+//to get the summary 
+document.getElementById('summary').innerHTML= data.indexBar.stories[0].autoGeneratedSummary
+
+
+// CARD 2 DATA: 
+// to get the title
+document.getElementById('title1').innerText= data.indexBar.stories[0].title
+// to get the thumbnail
+document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
+//to get the summary 
+document.getElementById('summary').innerHTML= data.indexBar.stories[0].autoGeneratedSummary
+
+
+// CARD 3 DATA: 
+// to get the title
+document.getElementById('title1').innerText= data.indexBar.stories[0].title
+// to get the thumbnail
+document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
+//to get the summary 
+document.getElementById('summary').innerHTML= data.indexBar.stories[0].autoGeneratedSummary
+
+// CARD 4 DATA: 
+// to get the title
+document.getElementById('title1').innerText= data.indexBar.stories[0].title
+// to get the thumbnail
+document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
+//to get the summary 
+document.getElementById('summary').innerHTML= data.indexBar.stories[0].autoGeneratedSummary
+
+// CARD 5 DATA: 
+// to get the title
+document.getElementById('title1').innerText= data.indexBar.stories[0].title
+// to get the thumbnail
+document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
+//to get the summary 
+document.getElementById('summary').innerHTML= data.indexBar.stories[0].autoGeneratedSummary
+
+// CARD 6 DATA: 
+// to get the title
+document.getElementById('title1').innerText= data.indexBar.stories[0].title
+// to get the thumbnail
+document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
+//to get the summary 
+document.getElementById('summary').innerHTML= data.indexBar.stories[0].autoGeneratedSummary
+
+
+
+console.log(data.indexBar.stories[0].title) }).catch(err => {
+                    console.error(err);
+                });
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

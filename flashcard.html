@@ -46,22 +46,24 @@
                         <a class="nav-link  li1" aria-current="page" href="index.html"
                             style="color: white;">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active li1" href="flashcard.html" style="color: rgb(9, 11, 58) ;">Flashcards</a>
+                    <div class="dropdown">
+                    <li class="nav-item dropdown" >
+                        <a class="nav-link active li1 btn btn-secondary dropdown-toggle" href="flashcard.html" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(9, 11, 58) ;">KnowledgeBase</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Flashcards</a></li>
+                            <li><a class="dropdown-item" href="#">Quizzes</a></li>
+                          </ul>
                     </li>
+                </div>
                     <li class="nav-item">
                         <a class="nav-link li1" href="stockNews.html" style="color: white;">Stock News</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle centertabs" href="#" id="navbarDropdownMenuLink"
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#" id="navbarDropdownMenuLink"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
                             Video Lectures
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else </a></li>
-                        </ul>
+                        
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html" style="color: white;">About</a>

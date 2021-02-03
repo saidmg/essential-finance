@@ -11,6 +11,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -140,6 +143,13 @@
             justify-content: center;
             flex-direction: row;
         }
+
+        .carousel-indicators li {
+            background-color: black;
+        }
+
+    
+        
     </style>
     <header>
         <h1 class="abc">Financial Website</h1>
@@ -183,46 +193,144 @@
             </div>
         </div>
     </nav>
-
-    <!--THIS IS FOR THE STOCK NEWS -->
-
     <br>
-    <!--CARD 1-->
-    <div class="carousel-inner">
-        <div class="item active">
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-                <h5 class="card-title" id="title1" >Card title</h5>
-              <div class="col-md-12">
-                <img src="..." alt="..." style= "max-width: 100%" id="thumbNail">
-                <div class="card-body">
-                  <p class="card-text" id="summary">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Source: Bloomberg</small></p>
+
+    <!--TO ENTER STOCK NEWS -->
+    <h2 style="text-align: center;">News Articles</h2>
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            ​
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="..." alt="..." id="thumbNail">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title" id="title1">Card title</h5>
+                                    <p class="card-text" id="summary">This is a wider card with supporting text below as
+                                        a natural lead-in to additional content. This content is a little bit longer.
+                                    </p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                ​
+                <div class="item">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="..." alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="..." alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-          </div>
+            ​
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </div>
+    <!--THIS IS FOR THE STOCK NEWS -->
+    <br>
+    <!--        
+      
+        <div class="container">
+            
+
+            <div class="item active" > -->
+    <!-- <div class="card mb-3" style="max-width: 540px;">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"  ></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                    <div class="row g-0" >
+                        <h5 class="card-title" id="title1">Card title</h5>
+                        <div class="col-md-12">
+                            <img src="..." alt="..." style="max-width: 100%" id="thumbNail">
+                            <div class="card-body">
+                                <p class="card-text" id="summary">This is a wider card with supporting text below as a
+                                    natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Source: Bloomberg</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div> -->
 
 
     <!--CARD 2-->
-    
-            <div class="col-sm-6">
+
+    <!-- <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title" >Title goes here</h5>
+                        <h5 class="card-title">Title goes here</h5>
                         <img src="https://investorplace.com/wp-content/uploads/2020/07/aapl-stock-2.jpg"
                             class="card-img-top" alt="...">
-                        <p class="card-text" >With supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <a href="#" class="btn btn-primary">Read more here</a>
                         <p class="card-text"><small class="text-muted">Source: bloomberg </small></p>
                     </div>
                 </div>
             </div>
         </div>
-        <br>
+        <br> -->
     <!--CARD 3-->
-        <div class="row">
+    <!-- <div class="row">
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
@@ -234,204 +342,151 @@
                         <p class="card-text"><small class="text-muted">Source: bloomberg </small></p>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            
-        <!--CARD 4-->
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Title goes here</h5>
-                        <img src="https://investorplace.com/wp-content/uploads/2020/07/aapl-stock-2.jpg"
-                            class="card-img-top" alt="...">
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Read more here</a>
-                        <p class="card-text"><small class="text-muted">Source: bloomberg </small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <br>
-    
-    <!--CARD 5-->
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Title goes here</h5>
-                    <img src="https://investorplace.com/wp-content/uploads/2020/07/aapl-stock-2.jpg"
-                        class="card-img-top" alt="...">
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Read more here</a>
-                    <p class="card-text"><small class="text-muted">Source: bloomberg </small></p>
-                </div>
-            </div>
-        </div>
-
-        
-    <!--CARD 6-->
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Title goes here</h5>
-                    <img src="https://investorplace.com/wp-content/uploads/2020/07/aapl-stock-2.jpg"
-                        class="card-img-top" alt="...">
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Read more here</a>
-                    <p class="card-text"><small class="text-muted">Source: bloomberg </small></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
- </div>
-
-    <!-- <ul class="nav nav-tabs  " >
-        <li class="nav-item" >
-            <a class="nav-link active" aria-current="page" href="#">Flashcards</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-bs-toggle="dropdown" href="#" role="button"
-                aria-expanded="false" style="color: white;">Video Lectures</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#"  style="color: white;">Stock News</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link " href="#"  style="color: white;" >About Us</a>
-        </li>
-    </ul> -->
-    <div class="container full-height test">
-        <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
-            </div>
-
-            <div class="col-3"></div>
-        </div>
-        <i class="arrow down Hero__arrow"></i>
-
-    </div>
-    <!-- <div class="test2" style="background-color: white;">
-        sapfmsa
+    <!-- Left and right controls-->
+    <!-- <a class="left stock-control" href="stockCard" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right stock-control" href="#stockCard" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a> -->
+    <!-- </div>
     </div> -->
+
+    <!--CARD 4-->
+    <!-- <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Title goes here</h5>
+                <img src="https://investorplace.com/wp-content/uploads/2020/07/aapl-stock-2.jpg" class="card-img-top"
+                    alt="...">
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Read more here</a>
+                <p class="card-text"><small class="text-muted">Source: bloomberg </small></p>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!--CARD 5-->
+    <!-- <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Title goes here</h5>
+                    <img src="https://investorplace.com/wp-content/uploads/2020/07/aapl-stock-2.jpg"
+                        class="card-img-top" alt="...">
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Read more here</a>
+                    <p class="card-text"><small class="text-muted">Source: bloomberg </small></p>
+                </div>
+            </div>
+        </div> -->
+
+
+    <!--CARD 6-->
+    <!-- <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Title goes here</h5>
+                    <img src="https://investorplace.com/wp-content/uploads/2020/07/aapl-stock-2.jpg"
+                        class="card-img-top" alt="...">
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Read more here</a>
+                    <p class="card-text"><small class="text-muted">Source: bloomberg </small></p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
 
     <script>
 
-// async function stockPrice() {
-// fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/news/v2/get-details?uuid=9803606d-a324-3864-83a8-2bd621e6ccbd&region=US", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": "1f35cd15e2msh6ebb19f225d0159p1d534djsn08377cdf56bd",
-// 		"x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
-// 	}
-// })
-// .then(response => {
-// 	console.log(response);
-// })
-// .catch(err => {
-// 	console.error(err);
-// });
-
-// }
-
-// var test
-// async function stockPrice() {
-//   test = await fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/news/v2/get-details?uuid=9803606d-a324-3864-83a8-2bd621e6ccbd&region=US", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": "1f35cd15e2msh6ebb19f225d0159p1d534djsn08377cdf56bd",
-// 		"x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
-// 	}
-// })
-// .then(response => response.json()) 
-// console.log(test)
-// // TO INPUT TITLE
-// document.getElementById('title1').innerText= test.data.contents[0]["content"]["title"]
-// // TO INPUT IMAGE
-// // document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
-// // TO INPUT SUMMARY 
-// document.getElementById('summary').innerText= test.data.contents[0].content["summary"]
-
-// }
-
-
-
-        async function stockPrice() {
-            await fetch("https://bloomberg-market-and-financial-news.p.rapidapi.com/news/list-by-region?id=canada-home-v3", {
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-key": "91acb173aamshe3a7ddc6687c44dp1d40fbjsnf966ff909dce",
-                    "x-rapidapi-host": "bloomberg-market-and-financial-news.p.rapidapi.com"
-                }
-            })
-                .then(response => response.json()).then(data => { 
-console.log(data)
-// CARD 1 DATA: 
-// to get the title
-document.getElementById('title1').innerText= data.indexBar.stories[0].title
-// to get the thumbnail
-document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
-//to get the summary 
-document.getElementById('summary').innerHTML= data.indexBar.stories[0].autoGeneratedSummary
-
-
-// CARD 2 DATA: 
-// to get the title
-document.getElementById('title1').innerText= data.indexBar.stories[0].title
-// to get the thumbnail
-document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
-//to get the summary 
-document.getElementById('summary').innerHTML= data.indexBar.stories[0].autoGeneratedSummary
-
-
-// CARD 3 DATA: 
-// to get the title
-document.getElementById('title1').innerText= data.indexBar.stories[0].title
-// to get the thumbnail
-document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
-//to get the summary 
-document.getElementById('summary').innerHTML= data.indexBar.stories[0].autoGeneratedSummary
-
-// CARD 4 DATA: 
-// to get the title
-document.getElementById('title1').innerText= data.indexBar.stories[0].title
-// to get the thumbnail
-document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
-//to get the summary 
-document.getElementById('summary').innerHTML= data.indexBar.stories[0].autoGeneratedSummary
-
-// CARD 5 DATA: 
-// to get the title
-document.getElementById('title1').innerText= data.indexBar.stories[0].title
-// to get the thumbnail
-document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
-//to get the summary 
-document.getElementById('summary').innerHTML= data.indexBar.stories[0].autoGeneratedSummary
-
-// CARD 6 DATA: 
-// to get the title
-document.getElementById('title1').innerText= data.indexBar.stories[0].title
-// to get the thumbnail
-document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
-//to get the summary 
-document.getElementById('summary').innerHTML= data.indexBar.stories[0].autoGeneratedSummary
-
-
-
-console.log(data.indexBar.stories[0].title) }).catch(err => {
-                    console.error(err);
-                });
+        async function saidPrice() {
+            await fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=c693c7b63cfe4edba81f415b6c81a6e1')
+         .then(response => response.json()).then(data => {
+                    console.log(data)
+         })
+        
         }
+
+
+
+
+
+
+        // async function stockPrice() {
+        //     await fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=c693c7b63cfe4edba81f415b6c81a6e1", {
+        //         "method": "GET",
+        //         "headers": {
+        //             "x-rapidapi-key": "91acb173aamshe3a7ddc6687c44dp1d40fbjsnf966ff909dce",
+        //             "x-rapidapi-host": "bloomberg-market-and-financial-news.p.rapidapi.com"
+        //         }
+        //     })
+        //         .then(response => response.json()).then(data => {
+                    console.log(data)
+                    // CARD 1 DATA: 
+                    // to get the title
+                    document.getElementById('title1').innerText = data.indexBar.stories[0].title
+                    // to get the thumbnail
+                    document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
+                    //to get the summary 
+                    document.getElementById('summary').innerHTML = data.indexBar.stories[0].autoGeneratedSummary
+
+
+                    // CARD 2 DATA: 
+                    // to get the title
+                    document.getElementById('title1').innerText = data.indexBar.stories[0].title
+                    // to get the thumbnail
+                    document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
+                    //to get the summary 
+                    document.getElementById('summary').innerHTML = data.indexBar.stories[0].autoGeneratedSummary
+
+
+                    // CARD 3 DATA: 
+                    // to get the title
+                    document.getElementById('title1').innerText = data.indexBar.stories[0].title
+                    // to get the thumbnail
+                    document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
+                    //to get the summary 
+                    document.getElementById('summary').innerHTML = data.indexBar.stories[0].autoGeneratedSummary
+
+                    // CARD 4 DATA: 
+                    // to get the title
+                    document.getElementById('title1').innerText = data.indexBar.stories[0].title
+                    // to get the thumbnail
+                    document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
+                    //to get the summary 
+                    document.getElementById('summary').innerHTML = data.indexBar.stories[0].autoGeneratedSummary
+
+                    // CARD 5 DATA: 
+                    // to get the title
+                    document.getElementById('title1').innerText = data.indexBar.stories[0].title
+                    // to get the thumbnail
+                    document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
+                    //to get the summary 
+                    document.getElementById('summary').innerHTML = data.indexBar.stories[0].autoGeneratedSummary
+
+                    // CARD 6 DATA: 
+                    // to get the title
+                    document.getElementById('title1').innerText = data.indexBar.stories[0].title
+                    // to get the thumbnail
+                    document.getElementById('thumbNail').setAttribute("src", data.indexBar.stories[0].thumbnailImage)
+                    //to get the summary 
+                    document.getElementById('summary').innerHTML = data.indexBar.stories[0].autoGeneratedSummary
+
+
+
+        //             console.log(data.indexBar.stories[0].title)
+        //         }).catch(err => {
+        //             console.error(err);
+        //         });
+        // }
+        
 
 
 
