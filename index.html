@@ -10,8 +10,10 @@
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
     <title>Financial Development</title>
-    <link rel="icon" href="./assets/images/logo.JPG" type="image/icon" sizes="16x16">
+    <link rel="icon" href="./assets/icon2.png" type="image/icon" sizes="16x16">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
 </head>
 
 <body>
@@ -49,7 +51,7 @@
                         <a class="nav-link li1" href="flashcard.html" style="color: white;">Flashcards</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link li1" href="#" style="color: white;">Stock News</a>
+                        <a class="nav-link li1" href="stockNews.html" style="color: white;">Stock News</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle centertabs" href="#" id="navbarDropdownMenuLink"
@@ -112,15 +114,27 @@
                         <source src="https://media.giphy.com/media/U4FkC2VqpeNRHjTDQ5/giphy.mp4" type="video/mp4">
                     </video> </div>
                 <div class="col-12">
-                    <div class="card border-secondary mb-3" style=" background-color: rgb(12, 12, 32);">
-                        <div class="card-header"> <label for="fname">Stock Search:</label> <input
-                                type="text" id="fname" name="fname"></div>
+                    <!-- <div class="card border-secondary mb-3" style=" background-color: rgb(12, 12, 32); width: fit-content;">
+                        <div class="card-header">  <input
+                                type="text" id="stockName" name="fname" style="width: 50%;" placeholder="ticker ( ex : zm)"><button onclick="getData()" type="button" class="btn btn-secondary" style="margin-left:5%"> Search</button>
+                            </div>
                         <div class="card-body text-secondary">
-                            <h5 class="card-title">Secondary card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <h5 id="dateOfOutput" class="card-title">Daily Prices:</h5>
+                            <h6 id="lastRefreshed" class="card-title">Company:</h6>
+                            <ul>
+                                <li id="yesterdayHigh" class="card-text">High:
+                                </li>
+                                <li id="yesterdayLow" class="card-text">Low:
+                                </li>
+                                 <li id="yesterdayClose" class="card-text">Close:
+                                </li> 
+                                <li id="yesterdayVolume" class="card-text">Volume:
+                                </li>
+                            </ul>
+                            
+                           
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
@@ -129,6 +143,7 @@
 
 
 
+    <script src="script.js"></script>
 
 
     <script>
