@@ -10,14 +10,14 @@ async function getData() {
     console.log(`... getting data info for that company`)
     weatherWeekly = await fetch(apiurl1).then(r => r.json())
     console.log(`${weatherWeekly}`)
-
+    getDateFormat()
     // weatherWeekly["Time Series (Daily)"]["2021-02-01"]["1. open"]
     document.getElementById("dateOfOutput").innerText  =`Daily Prices (${weatherWeekly["Meta Data"]["3. Last Refreshed"]})`
     document.getElementById("lastRefreshed").innerText = `Company: ${weatherWeekly["Meta Data"]["2. Symbol"]} `
-    document.getElementById("yesterdayHigh").innerText = `High: ${weatherWeekly["Time Series (Daily)"]["2021-02-01"]["2. high"]}`
-    document.getElementById("yesterdayLow").innerText = `Low: ${weatherWeekly["Time Series (Daily)"]["2021-02-01"]["3. low"]}`
-    document.getElementById("yesterdayClose").innerText = `Close: ${weatherWeekly["Time Series (Daily)"]["2021-02-01"]["4. close"]}`
-    document.getElementById("yesterdayVolume").innerText = `Volume: ${weatherWeekly["Time Series (Daily)"]["2021-02-01"]["5. volume"]}`
+    document.getElementById("yesterdayHigh").innerText = `High: ${weatherWeekly["Time Series (Daily)"][yearMonth]["2. high"]}`
+    document.getElementById("yesterdayLow").innerText = `Low: ${weatherWeekly["Time Series (Daily)"][yearMonth]["3. low"]}`
+    document.getElementById("yesterdayClose").innerText = `Close: ${weatherWeekly["Time Series (Daily)"][yearMonth]["4. close"]}`
+    document.getElementById("yesterdayVolume").innerText = `Volume: ${weatherWeekly["Time Series (Daily)"][yearMonth]["5. volume"]}`
 }
 
 var yearMonth
@@ -31,6 +31,7 @@ function getDateFormat(){
     yearMonth += `-${dayyy}`
 
 }
+
 
 
 var cardArticle
@@ -55,3 +56,32 @@ async function getArticles() {
     }    
 }
 getArticles()
+
+var cryptocurrency
+var cryptoRank
+var cryptoName
+var cryptoPercentageChange1H
+var cryptoPriceUSD
+var sentence =""
+var idDesicion
+var arrowDestination
+async function getcrypto() {
+    // if(!city){
+    // }
+    // city = document.querySelector('.me-2').value
+    // <span></span>
+    cryptocurrency =await fetch("https://api.coinlore.net/api/tickers/?start=0&limit=20").then(r => r.json())
+    console.log(` .. fetched info: `, cryptocurrency)
+    console.log(`${cryptocurrency}`)
+    for(var l=0 ; l <15 ; l++){
+    cryptoRank = cryptocurrency.data[l]["rank"]
+    cryptoName = cryptocurrency.data[l]["name"]
+    cryptoPercentageChange1H = cryptocurrency.data[l]["percent_change_1h"]
+    cryptoPriceUSD = cryptocurrency.data[l]["price_usd"]
+    if(Math.sign (cryptocurrency.data[l]["percent_change_1h"])>0){console.log('bigger'); idDesicion ="positive" ;arrowDestination='&uarr;' }
+    else if(Math.sign (cryptocurrency.data[l]["percent_change_1h"])==0){console.log('equal'); idDesicion ="zeroo"}
+    else {console.log('Less'); idDesicion ="negative" ;arrowDestination= '&darr;'}
+    sentence += `${cryptoName}<span id=${idDesicion}> ${arrowDestination}  ${cryptoPercentageChange1H}%</span> &#8652; ${cryptoPriceUSD} $  <span id="barrier">&#10074;</span> `}
+    document.querySelector('.marquee-content-items').innerHTML = sentence
+    }    
+    getcrypto()

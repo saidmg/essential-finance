@@ -12,6 +12,8 @@
     <title>Financial Development</title>
     <link rel="icon" href="./assets/images/logo.JPG" type="image/icon" sizes="16x16">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
 </head>
 
 <body>
@@ -24,7 +26,7 @@
     }
     .simple-marquee-container {
         width: 100%;
-        background: grey;
+        background: rgba(75, 102, 133, 0.541);
         float: left;
         display: inline-block;
         overflow: hidden;
@@ -36,7 +38,7 @@
     
     .simple-marquee-container .marquee-sibling {
         padding: 0;
-        background: rgb(61, 61, 61);
+        background: rgb(6, 2, 34);
         width: 20%;
         height: 45px;
         line-height: 42px;
@@ -125,21 +127,45 @@
     <div class="content">
         <div class="simple-marquee-container">
             <div class="marquee-sibling">
-                News
+                Cryptocurrency
             </div>
             <div class="marquee">
                 <ul class="marquee-content-items">
-                    <li>said</li>
+                    <!-- <li>said</li>
                     <li>Vithuuuuuu</li>
                     <li>Fatih</li>
                     <li>ILIAS</li>
-                    <li>Muhammad</li>
+                    <li>Muhammad</li> -->
                 </ul>
             </div>
         </div>
     </div>
-
+    
     <div class="container ">
+        <div class="card border-secondary mb-3" style=" background-color: rgb(12, 12, 32); width: fit-content; margin: auto;margin-top: 5%">
+            <div class="card-header"> <input type="text" id="stockName" name="fname" style="width: 50%;"
+                    placeholder="ticker ( ex : zm)"><button onclick="getData()" type="button" class="btn btn-secondary"
+                    style="margin-left:5%"> Search</button>
+            </div>
+            <div class="card-body text-secondary">
+                <h5 id="dateOfOutput" class="card-title">Daily Prices:</h5>
+                <h6 id="lastRefreshed" class="card-title">Company:</h6>
+                <ul>
+                    <li id="yesterdayHigh" class="card-text">High:
+                    </li>
+                    <li id="yesterdayLow" class="card-text">Low:
+                    </li>
+                    <li id="yesterdayClose" class="card-text">Close:
+                    </li>
+                    <li id="yesterdayVolume" class="card-text">Volume:
+                    </li>
+                </ul>
+                <!-- <p class="card-text"></p>
+                <p class="card-text">ssa</p>
+                <p class="card-text">ssa</p> -->
+
+            </div>
+        </div>
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="margin: 5%;">
             <ol class="carousel-indicators">
                 <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
@@ -211,31 +237,8 @@
                 <span class="visually-hidden">Next</span>
             </a>
         </div>
-
-        <div class="card border-secondary mb-3" style=" background-color: rgb(12, 12, 32); width: fit-content; margin: auto;">
-            <div class="card-header"> <input type="text" id="stockName" name="fname" style="width: 50%;"
-                    placeholder="ticker ( ex : zm)"><button onclick="getData()" type="button" class="btn btn-secondary"
-                    style="margin-left:5%"> Search</button>
-            </div>
-            <div class="card-body text-secondary">
-                <h5 id="dateOfOutput" class="card-title">Daily Prices:</h5>
-                <h6 id="lastRefreshed" class="card-title">Company:</h6>
-                <ul>
-                    <li id="yesterdayHigh" class="card-text">High:
-                    </li>
-                    <li id="yesterdayLow" class="card-text">Low:
-                    </li>
-                    <li id="yesterdayClose" class="card-text">Close:
-                    </li>
-                    <li id="yesterdayVolume" class="card-text">Volume:
-                    </li>
-                </ul>
-                <!-- <p class="card-text"></p>
-                <p class="card-text">ssa</p>
-                <p class="card-text">ssa</p> -->
-
-            </div>
-        </div>
+        
+        
     </div>
 
     
@@ -601,7 +604,7 @@
                 autostart: true,
                 property: 'value',
                 onComplete: null,
-                duration: 20000,
+                duration: 50000,
                 padding: 10,
                 marquee_class: '.marquee',
                 container_class: '.simple-marquee-container',
