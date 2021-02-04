@@ -1,7 +1,7 @@
 .flip {
     -webkit-perspective: 800;
     width: 600px;
-    height: 400px;
+    height: 500px;
     position: relative;
     margin: 50px auto;
 }
@@ -11,9 +11,7 @@
 }
 
 .flip .card {
-    width: 100%;
-    height: 100%;
-    -webkit-transform-style: preserve-3d;
+   -webkit-transform-style: preserve-3d;
     -webkit-transition: 0.5s;
 }
 
@@ -24,29 +22,35 @@
     -webkit-backface-visibility: hidden;
     z-index: 2;
     font-family: Georgia;
-    /*font-size: 3em;*/
+    font-size: 3em;
     text-align: center;
-    /*line-height: 200px;*/
 }
 
 .flip .card .front {
     position: absolute;
     z-index: 1;
-    background: black;
-    color: white;
-    cursor: pointer;
+    background-color: white;
+  cursor: pointer;
 }
 
 .flip .card .back {
     -webkit-transform: rotateY(-180deg);
-    background: blue;
-    background: white;
+ 
     color: black;
     cursor: pointer;
 }
-#result:hover {
-    color: red;
+#startBtn{
+    margin: 250px;
 }
-#result {
-    margin-top: 75px;
+h3 {
+    margin-top: 100px;
+    color: white;
+    font-size: 22px;
+    font-family: 'Indie Flower', cursive;
+}
+h2{
+    margin-top: 100px;
+    color: white;
+    font-size: 22px;
+    font-family: 'Hachi Maru Pop', cursive;
 }
