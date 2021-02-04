@@ -47,8 +47,6 @@ var flashcards = [
 var questionNumber = 0;
 
 function getNextQuestion(questionNumber = 0) {
-
-
     if (questionNumber > 8) {
     }
     questionBox.innerHTML = "<h3>" + flashcards[questionNumber].question + "</h3>";
@@ -68,10 +66,6 @@ function start(){
     document.querySelector('#answerCheck').style.display = "none"
    getNextQuestion()
 }
-
-
-
-
 
 function nextQuestion() {
     back ()
@@ -102,3 +96,4 @@ else{
     <a href="quizz.html" style="margin-top: 25px; width: 300px" class="btn btn-danger id="returnBtn"> More Question ? </a>` 
 }
     }
+    
