@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,7 +53,8 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active li1" href="videolectures.html" style="color: rgb(9, 11, 58) ;">video Lectures</a>
+                        <a class="nav-link active li1" href="videolectures.html" style="color: rgb(9, 11, 58) ;">video
+                            Lectures</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html" style="color: white;">Contact</a>
@@ -61,78 +63,119 @@
             </div>
         </div>
     </nav>
-<br>
+    <br>
     <!--Video Lectures-->
     <div class="container">
-    <h1 style="text-align: center;">Video Library </h1>
-    <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              table content
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-        <ul>
-            <li><button onclick="functionA()">TFSA</button></li>
-            <li><button onclick="functionB()">RRSP</button></li>
-            <li><button onclick="functionC()">HBP</button></li>
-        </ul>
+        <h1 style="text-align: center;">Video Library </h1>
+        <div class="accordion" id="accordionExample" style="text-align: center;">
+            <div class="accordion-item" style="text-align: center;">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" style="color: white; text-align: center;"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Click Me to access videos library!
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <!--This will show the subCategories of the videos-->
+                    <div class="accordion-body">
+                        <button class="btn btn-primary" type="button" onclick="functionA()"> TFSA 101 </button>
+                        <button class="btn btn-primary" type="button" onclick="functionB()">RRSP 101 </button>
+                        <button class="btn btn-primary" type="button" onclick="functionC()">Home Buyer's plan </button>
+                        <button class="btn btn-primary" type="button" onclick="functionD()">RESP 101 </button>
+                        <button class="btn btn-primary" type="button" onclick="functionE()">How to make a budget </button>
+                    </div>
+                </div>
             </div>
-          </div>
+
         </div>
- 
- 
-    <div id="carouselExampleControls" class="carousel slide" data-interval="false">
-        <div class="carousel-inner" id= "portfolioCarousel">
-          <div id="TFSA" class="carousel-item ">
-            <iframe  src="https://www.youtube.com/embed/e3Iu1JrhaMY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px;" allowfullscreen></iframe>
-          </div>
-          <div  id="RRSP" class="carousel-item">
-            <iframe src="https://www.youtube.com/embed/ggj2bv7azyQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px;" allowfullscreen></iframe>
-          </div>
-          <div  id="HBP" class="carousel-item active">
-            <iframe src="https://www.youtube.com/embed/LMrLiIhb00A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px;" allowfullscreen></iframe>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </a>
-      </div>
-    </div>
- 
-
-<script>
-
-function functionA(){
-    document.getElementById('RRSP').classList.remove('active')
-     document.getElementById('HBP').classList.remove('active')
-     document.getElementById('TFSA').classList.add('active')
- }
-
- function functionB(){
-    document.getElementById('RRSP').classList.add('active')
-     document.getElementById('HBP').classList.remove('active')
-     document.getElementById('TFSA').classList.remove('active')
- }
-
-function functionC(){
-    document.getElementById('RRSP').classList.remove('active')
-     document.getElementById('HBP').classList.add('active')
-     document.getElementById('TFSA').classList.remove('active')
- }
+            <div id="carouselExampleControls" class="carousel slide" data-interval="false">
+                <div class="carousel-inner" id="portfolioCarousel">
+                    <div id="TFSA" class="carousel-item ">
+                        <iframe src="https://www.youtube.com/embed/e3Iu1JrhaMY" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            width="200px" height="700px" class="d-block w-100" style="padding: 70px;"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div id="RRSP" class="carousel-item">
+                        <iframe src="https://www.youtube.com/embed/ggj2bv7azyQ" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            width="200px" height="700px" class="d-block w-100" style="padding: 70px;"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div id="HBP" class="carousel-item active">
+                        <iframe src="https://www.youtube.com/embed/LMrLiIhb00A" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            width="200px" height="700px" class="d-block w-100" style="padding: 70px;"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div id="RESP" class="carousel-item">
+                        <iframe src="https://www.youtube.com/embed/KJ1ylUbrJlY" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            width="200px" height="700px" class="d-block w-100" style="padding: 70px;"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div id="Budget" class="carousel-item">
+                        <iframe src="https://www.youtube.com/embed/z3lydPM2Xzw" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            width="200px" height="700px" class="d-block w-100" style="padding: 70px;"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        
 
 
-  
-    </script>
-    <script src="script.js"></script>
+        <script>
+
+            function functionA() {
+                document.getElementById('RRSP').classList.remove('active')
+                document.getElementById('HBP').classList.remove('active')
+                document.getElementById('TFSA').classList.add('active')
+                document.getElementById('RESP').classList.remove('active')
+                document.getElementById('Budget').classList.remove('active')
+            }
+
+            function functionB() {
+                document.getElementById('RRSP').classList.add('active')
+                document.getElementById('HBP').classList.remove('active')
+                document.getElementById('TFSA').classList.remove('active')
+                document.getElementById('RESP').classList.remove('active')
+                document.getElementById('Budget').classList.remove('active')
+            }
+
+            function functionC() {
+                document.getElementById('RRSP').classList.remove('active')
+                document.getElementById('HBP').classList.add('active')
+                document.getElementById('TFSA').classList.remove('active')
+                document.getElementById('RESP').classList.remove('active')
+                document.getElementById('Budget').classList.remove('active')
+            }
+            function functionD() {
+                document.getElementById('RRSP').classList.remove('active')
+                document.getElementById('HBP').classList.remove('active')
+                document.getElementById('TFSA').classList.remove('active')
+                document.getElementById('RESP').classList.add('active')
+                document.getElementById('Budget').classList.remove('active')
+            }
+            function functionE() {
+                document.getElementById('RRSP').classList.remove('active')
+                document.getElementById('HBP').classList.remove('active')
+                document.getElementById('TFSA').classList.remove('active')
+                document.getElementById('RESP').classList.remove('active')
+                document.getElementById('Budget').classList.add('active')
+            }
+
+        </script>
+        <script src="script.js"></script>
 </body>
- 
-</html>
 
+</html>
