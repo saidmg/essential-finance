@@ -42,9 +42,7 @@ function isElementInViewport(el) {
 
 var stockN
 async function getData() {
-    // if(!city){
-    // }
-    // city = document.querySelector('.me-2').value
+   
     stockN = document.getElementById('stockName').value 
     apiurl1 = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${stockN}&apikey=T7LHA4F7LBUKYZBC`
 
@@ -78,13 +76,11 @@ function getDateFormat(){
 
 var cardArticle
 async function getArticles() {
-    // if(!city){
-    // }
-    // city = document.querySelector('.me-2').value
+    
     cardArticle =await fetch("https://bloomberg-market-and-financial-news.p.rapidapi.com/news/list-by-region?id=canada-home-v3", {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "91acb173aamshe3a7ddc6687c44dp1d40fbjsnf966ff909dce",
+            "x-rapidapi-key": "b30ea4c511mshf44492b9d2333b0p1639f4jsn409787aa338a",
             "x-rapidapi-host": "bloomberg-market-and-financial-news.p.rapidapi.com"
         }
     }).then(r => r.json())
@@ -112,24 +108,24 @@ async function getcrypto() {
     // }
     // city = document.querySelector('.me-2').value
     // <span></span>
-    cryptocurrency =await fetch("https://api.coinlore.net/api/tickers/?start=0&limit=20").then(r => r.json())
-    console.log(` .. fetched info: `, cryptocurrency)
-    console.log(`${cryptocurrency}`)
-    for(var l=0 ; l <15 ; l++){
-    cryptoRank = cryptocurrency.data[l]["rank"]
-    cryptoName = cryptocurrency.data[l]["name"]
-    cryptoPercentageChange1H = cryptocurrency.data[l]["percent_change_1h"]
-    cryptoPriceUSD = cryptocurrency.data[l]["price_usd"]
-    if(Math.sign (cryptocurrency.data[l]["percent_change_1h"])>0){console.log('bigger'); idDesicion ="positive" ;arrowDestination='&uarr;' }
-    else if(Math.sign (cryptocurrency.data[l]["percent_change_1h"])==0){console.log('equal'); idDesicion ="zeroo"}
-    else {console.log('Less'); idDesicion ="negative" ;arrowDestination= '&darr;'}
-    sentence += `${cryptoName}<span id=${idDesicion}> ${arrowDestination}  ${cryptoPercentageChange1H}%</span> &#8652; ${cryptoPriceUSD} $  <span id="barrier">&#10074;</span> `}
-    document.querySelector('.marquee-content-items').innerHTML = sentence
-    }    
-    getcrypto()
+    // cryptocurrency =await fetch("https://api.coinlore.net/api/tickers/?start=0&limit=20").then(r => r.json())
+    // console.log(` .. fetched info: `, cryptocurrency)
+    // console.log(`${cryptocurrency}`)
+    // for(var l=0 ; l <15 ; l++){
+    // cryptoRank = cryptocurrency.data[l]["rank"]
+    // cryptoName = cryptocurrency.data[l]["name"]
+    // cryptoPercentageChange1H = cryptocurrency.data[l]["percent_change_1h"]
+    // cryptoPriceUSD = cryptocurrency.data[l]["price_usd"]
+    // if(Math.sign (cryptocurrency.data[l]["percent_change_1h"])>0){console.log('bigger'); idDesicion ="positive" ;arrowDestination='&uarr;' }
+    // else if(Math.sign (cryptocurrency.data[l]["percent_change_1h"])==0){console.log('equal'); idDesicion ="zeroo"}
+    // else {console.log('Less'); idDesicion ="negative" ;arrowDestination= '&darr;'}
+    // sentence += `${cryptoName}<span id=${idDesicion}> ${arrowDestination}  ${cryptoPercentageChange1H}%</span> &#8652; ${cryptoPriceUSD} $  <span id="barrier">&#10074;</span> `}
+    // document.querySelector('.marquee-content-items').innerHTML = sentence
+    // }    
+    // getcrypto()
 
 
-    $(function (){
+    // $(function (){
     
         /* Example options:
         
