@@ -15,6 +15,7 @@ header {
     padding: 10px;
 }
 
+/* tspan{display: none !important;} */
 .abc {
 
     background-color: white;

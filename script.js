@@ -90,19 +90,19 @@ var month12
 
 async function getGraphValues(){
     stockN = document.getElementById('stockName').value 
-test  = await fetch(`https://www.alphavantage.co/query?function=HT_TRENDLINE&symbol=$Zoom Video Communications Inc&interval=monthly&series_type=close&apikey=5LCI0OK5JDSBLKCF`).then(r => r.json())
-month0= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-02-28'].HT_TRENDLINE)
-month1= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-03-31'].HT_TRENDLINE)
-month2= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-04-30'].HT_TRENDLINE)
- month3= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-05-29'].HT_TRENDLINE)
- month4= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-06-30'].HT_TRENDLINE)
- month5= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-07-31'].HT_TRENDLINE)
- month6= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-08-31'].HT_TRENDLINE)
- month7= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-09-30'].HT_TRENDLINE)
- month8= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-10-30'].HT_TRENDLINE)
- month9= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-11-30'].HT_TRENDLINE)
- month10= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-12-31'].HT_TRENDLINE)
- month11= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2021-01-29'].HT_TRENDLINE)
+test  = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=${stockN}&apikey=MSF0RI50TV2Q43I9`).then(r => r.json())
+month0= parseFloat(test["Monthly Time Series"]['2020-02-28']["4. close"])
+month1= parseFloat(test["Monthly Time Series"]['2020-03-31']["4. close"])
+month2= parseFloat(test["Monthly Time Series"]['2020-04-30']["4. close"])
+month3= parseFloat(test["Monthly Time Series"]['2020-05-29']["4. close"])
+month4= parseFloat(test["Monthly Time Series"]['2020-06-30']["4. close"])
+month5= parseFloat(test["Monthly Time Series"]['2020-07-31']["4. close"])
+month6= parseFloat(test["Monthly Time Series"]['2020-08-31']["4. close"])
+month7= parseFloat(test["Monthly Time Series"]['2020-09-30']["4. close"])
+month8= parseFloat(test["Monthly Time Series"]['2020-10-30']["4. close"])
+month9= parseFloat(test["Monthly Time Series"]['2020-11-30']["4. close"])
+month10= parseFloat(test["Monthly Time Series"]['2020-12-31']["4. close"])
+month11= parseFloat(test["Monthly Time Series"]['2021-01-29']["4. close"])
 // var month12= test["Technical Analysis: HT_TRENDLINE"]['2021-02-03'].HT_TRENDLINE
 
 console.log(month1)
@@ -120,7 +120,12 @@ function triggerGraph(){
             },
             axisY: {
                 title: {
-                    text: "Monthly trendline"
+                    text: "Monthly Closing Price"
+                }
+            },
+            axisX: {
+                title: {
+                    text: `Company Symbol : ${stockN}`
                 }
             },
             dataSeries: [{
