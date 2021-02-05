@@ -60,7 +60,8 @@ async function getData() {
     document.getElementById("yesterdayLow").innerText = `Low: ${weatherWeekly["Time Series (Daily)"][yearMonth]["3. low"]}`
     document.getElementById("yesterdayClose").innerText = `Close: ${weatherWeekly["Time Series (Daily)"][yearMonth]["4. close"]}`
     document.getElementById("yesterdayVolume").innerText = `Volume: ${weatherWeekly["Time Series (Daily)"][yearMonth]["5. volume"]}`
-    loadScript()
+    // loadScript()
+    getGraphValues()
 }
 
 
@@ -73,41 +74,63 @@ async function loadScript(){
 }
 // loadScript()
 var test
-async function getGraphValues(){
-test  = await fetch("https://www.alphavantage.co/query?function=HT_TRENDLINE&symbol=IBM&interval=monthly&series_type=close&apikey=5LCI0OK5JDSBLKCF").then(r => r.json())
-var month1= test["Technical Analysis: HT_TRENDLINE"]['2020-03-31'].HT_TRENDLINE
-var month2= test["Technical Analysis: HT_TRENDLINE"]['2020-04-30'].HT_TRENDLINE
-var month3= test["Technical Analysis: HT_TRENDLINE"]['2020-05-29'].HT_TRENDLINE
-var month4= test["Technical Analysis: HT_TRENDLINE"]['2020-06-30'].HT_TRENDLINE
-var month5= test["Technical Analysis: HT_TRENDLINE"]['2020-07-31'].HT_TRENDLINE
-var month6= test["Technical Analysis: HT_TRENDLINE"]['2020-08-31'].HT_TRENDLINE
-var month7= test["Technical Analysis: HT_TRENDLINE"]['2020-09-30'].HT_TRENDLINE
-var month8= test["Technical Analysis: HT_TRENDLINE"]['2020-10-30'].HT_TRENDLINE
-var month9= test["Technical Analysis: HT_TRENDLINE"]['2020-11-30'].HT_TRENDLINE
-var month10= test["Technical Analysis: HT_TRENDLINE"]['2020-12-31'].HT_TRENDLINE
-var month11= test["Technical Analysis: HT_TRENDLINE"]['2021-01-29'].HT_TRENDLINE
-var month12= test["Technical Analysis: HT_TRENDLINE"]['2021-02-03'].HT_TRENDLINE
+var month1
+var month2
+var month3
+var month4
+var month5
+var month6
+var month7
+var month8
+var month9
+var month10
+var month11
+var month12
 
-console.log(x)
+
+async function getGraphValues(){
+    stockN = document.getElementById('stockName').value 
+test  = await fetch(`https://www.alphavantage.co/query?function=HT_TRENDLINE&symbol=$Zoom Video Communications Inc&interval=monthly&series_type=close&apikey=5LCI0OK5JDSBLKCF`).then(r => r.json())
+month0= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-02-28'].HT_TRENDLINE)
+month1= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-03-31'].HT_TRENDLINE)
+month2= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-04-30'].HT_TRENDLINE)
+ month3= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-05-29'].HT_TRENDLINE)
+ month4= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-06-30'].HT_TRENDLINE)
+ month5= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-07-31'].HT_TRENDLINE)
+ month6= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-08-31'].HT_TRENDLINE)
+ month7= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-09-30'].HT_TRENDLINE)
+ month8= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-10-30'].HT_TRENDLINE)
+ month9= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-11-30'].HT_TRENDLINE)
+ month10= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2020-12-31'].HT_TRENDLINE)
+ month11= parseFloat(test["Technical Analysis: HT_TRENDLINE"]['2021-01-29'].HT_TRENDLINE)
+// var month12= test["Technical Analysis: HT_TRENDLINE"]['2021-02-03'].HT_TRENDLINE
+
+console.log(month1)
+triggerGraph()
 }
-jQuery(function ($) {
-    var data1 = [12, 3, 4, 2, 12, 3, 4, 17, 22, 34, 54, 67];
-    $("#chart1").shieldChart({
-        exportOptions: {
-            image: false,
-            print: false
-        },
-        axisY: {
-            title: {
-                text: "Break-Down for selected quarter"
-            }
-        },
-        dataSeries: [{
-            seriesType: "line",
-            data: data1
-        }]
+var testing = parseFloat ("12")
+function triggerGraph(){
+    jQuery(function ($) {
+    
+        var data1 = [month0,month1, month2, month3, month4, month5, month6, month7, month8, month9, month10, month11];
+        $("#chart1").shieldChart({
+            exportOptions: {
+                image: false,
+                print: false
+            },
+            axisY: {
+                title: {
+                    text: "Monthly trendline"
+                }
+            },
+            dataSeries: [{
+                seriesType: "line",
+                data: data1
+            }]
+        });
     });
-});
+}
+
 
 var yearMonth
 var dayyy
@@ -137,14 +160,14 @@ async function getArticles() {
     }).then(r => r.json())
  
     console.log(`${cardArticle}`)
-    for(var i =0 ; i <3 ; i++){
+    for(var i =0 ; i <6 ; i++){
 
     document.getElementById(`title${i+1}`).innerText = cardArticle.modules[1].stories[i].title
     document.getElementById(`thumbNail${i+1}`).setAttribute("src", cardArticle.modules[1].stories[i].thumbnailImage)
     document.getElementById(`summary${i+1}`).innerHTML = cardArticle.modules[1].stories[i].autoGeneratedSummary
     }    
 }
-// getArticles()
+getArticles()
 
 var cryptocurrency
 var cryptoRank
@@ -173,7 +196,7 @@ async function getcrypto() {
     sentence += `${cryptoName}<span id=${idDesicion}> ${arrowDestination}  ${cryptoPercentageChange1H}%</span> &#8652; ${cryptoPriceUSD} $  <span id="barrier">&#10074;</span> `}
     document.querySelector('.marquee-content-items').innerHTML = sentence
     }    
-    // getcrypto()
+    getcrypto()
 
 
     $(function (){
