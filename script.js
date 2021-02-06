@@ -120,12 +120,13 @@ function triggerGraph(){
             },
             axisY: {
                 title: {
-                    text: "Monthly Closing Price"
+                    text: "Closing Price"
                 }
             },
             axisX: {
                 title: {
                     text: `Company Symbol : ${stockN}`
+
                 }
             },
             dataSeries: [{

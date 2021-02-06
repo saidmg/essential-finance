@@ -40,16 +40,28 @@
         position: relative;
         margin: 50px auto;
     }
-    @media only screen and (max-width: 768px) {
+    h2{
+        margin-top: 10%;
+        color: white;
+        font-size: 22px;
+        font-family: 'Hachi Maru Pop', cursive;
+    }
+    @media only screen and (max-width: 800px) {
     .flip {
-        -webkit-perspective: 800;
-        width: 300px;
+        -webkit-perspective: 1000;
+        width: 250px;
         height: 500px;
         position: relative;
         margin: 50px auto;
     }
+    h2{
+        margin-top: 10%;
+        color: white;
+        font-size: 12px;
+        font-family: 'Hachi Maru Pop', cursive;
     }
-
+    }
+.card-body{background-color: transparent;}
     .flip .card.flipped {
         -webkit-transform: rotateY(-180deg);
     }
@@ -93,12 +105,7 @@
         font-family: 'Indie Flower', cursive;
     }
     .row{display: block;}
-    h2{
-        margin-top: 100px;
-        color: white;
-        font-size: 22px;
-        font-family: 'Hachi Maru Pop', cursive;
-    }</style>
+    </style>
     <header>
         <h1 class="abc">Financial Website</h1>
     </header>
@@ -149,7 +156,7 @@
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6">
-                <button id="startBtn" onclick="start()" style="z-index: 2;" class="btn btn-danger">Start </button>
+                <button id="startBtn" onclick="start()" style="z-index: 2; margin-top: 100px;padding: 4rem 4rem;" class="btn btn-light">Start </button>
                 <div style="display: none;" class="flip">
                     <div class="card">
     
@@ -161,9 +168,9 @@
     
                             </form>
                             <div class="row">
-                                <p class="col-3"><p>
+                                <p ><p>
                                 <!-- <div class="col-2"> -->
-                                    <button style="margin: auto; margin-top: 25px; width: 150px;" class="btn btn-danger" id="answerCheck"
+                                    <button style="margin: auto; margin-top: 25px; width: 150px;" class="btn btn-light" id="answerCheck"
                                         onclick="checkAnswer()">Check Answer</button>
                                 <!-- </div> -->
                             </div>
@@ -174,7 +181,7 @@
     
     
                             </p>
-                            <button style="margin-left: 75px; margin-top: 25px; width: 150px;" class="btn btn-danger" id="backBtn" onclick="back()">BACK</button>
+                            <button style=" margin-top: 25px; width: 150px;" class="btn btn-light" id="backBtn" onclick="back()">BACK</button>
                         </div>
                     </div>
                 </div>
@@ -239,7 +246,7 @@ function getNextQuestion(questionNumber = 0) {
     document.querySelector('#answerCheck').style.display = "none"
         setTimeout(function(){
             $('#answerCheck').css('display','block');
-             }, 3000);
+             }, 10);
   }
        
 
@@ -260,7 +267,7 @@ function nextQuestion() {
     }
 
   function checkAnswer (){
-    result.innerHTML = "<h2>" + flashcards[questionNumber].answer + "</h3>" 
+    result.innerHTML = "<h2>" + flashcards[questionNumber].answer + "</h2>" 
          $('.flip').click(function () {
         $(this).find('.card').addClass('flipped')
        return true;
@@ -278,8 +285,8 @@ $('.flip').click(function () {
  }          
 else{ 
     document.querySelector('#backBtn').style.display= "none"
-    result.innerHTML = `<a href="stockNews.html" style="margin-top: 25px; width: 300px" class="btn btn-danger id="returnBtn"> Ready for Stock News ? </a>
-    <a href="quizz.html" style="margin-top: 25px; width: 300px" class="btn btn-danger id="returnBtn"> More Question ? </a>` 
+    result.innerHTML = `<a href="stockNews.html" style="margin-top: 25px;" class="btn btn-light id="returnBtn"> Ready for Stock News ? </a>
+    <a href="quizz.html" style="margin-top: 25px;" class="btn btn-light id="returnBtn"> More Question ? </a>` 
 }
     }
     </script>
