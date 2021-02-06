@@ -1,9 +1,10 @@
 body{
     background:  rgb(9, 11, 58) !important;
+    margin-bottom: 200px;
     
 }
 .card{
-    background-color: transparent ;
+    /* background-color: transparent ; */
     margin-top: 50px !important;
     
 }
@@ -51,7 +52,7 @@ body{
     /* font-size: 40px; */
     color: white;
     margin: 0px;
-    margin-top: 10%;
+    margin-top: 5%;
 
 }
 
