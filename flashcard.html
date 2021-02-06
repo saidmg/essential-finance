@@ -43,7 +43,7 @@
     h2{
         margin-top: 10%;
         color: white;
-        font-size: 22px;
+        font-size: 16px;
         font-family: 'Hachi Maru Pop', cursive;
     }
     @media only screen and (max-width: 800px) {
@@ -101,7 +101,7 @@
     h3 {
         margin-top: 100px;
         color: white;
-        font-size: 22px;
+        font-size: 18px;
         font-family: 'Indie Flower', cursive;
     }
     .row{display: block;}
@@ -127,7 +127,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link  li1" href="stockNews.html" style="color: white;">Stock
+                        <a onclick="getArticles()" class="nav-link  li1" href="stockNews.html" style="color: white;">Stock
                             News</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -156,7 +156,7 @@
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6">
-                <button id="startBtn" onclick="start()" style="z-index: 2; margin-top: 100px;padding: 4rem 4rem;" class="btn btn-light"><a href="#started" style="text-decoration: none;color:black;">Start</a> </button>
+                <button id="startBtn" onclick="start()" style="z-index: 2; margin-top: 100px;padding: 4rem 4rem;" class="btn btn-light"><a  style="text-decoration: none;color:black;">Start</a> </button>
                 <div style="display: none;" class="flip">
                     <div class="card">
     
@@ -170,7 +170,7 @@
                             <div class="row">
                                 <p ><p>
                                 <!-- <div class="col-2"> -->
-                                    <button id="started" style="margin: auto; margin-top: 25px; width: 150px;" class="btn btn-light" id="answerCheck"
+                                    <button style="margin: auto; margin-top: 25px; width: 150px;" class="btn btn-light" id="answerCheck"
                                         onclick="checkAnswer()">Check Answer</button>
                                 <!-- </div> -->
                             </div>
@@ -181,7 +181,7 @@
     
     
                             </p>
-                            <button style="margin-bottom: 25px; margin-top: 25px; width: 150px;" class="btn btn-light" id="backBtn" onclick="back()">BACK</button>
+                            <button style="margin-bottom: 25px; margin-top: 25px; width: 150px;" class="btn btn-light" id="backBtn" onclick="back()">Back</button>
                         </div>
                     </div>
                 </div>
@@ -257,8 +257,8 @@ function start(){
 
     document.querySelector('#startBtn').style.display = "none"
     document.querySelector('.flip').style.display = "block"
-    // questionBox.innerHTML = "<h3 " + flashcards[questionNumber].question + "</h3>"  
-    document.querySelector('#answerCheck').style.display = "none"
+    questionBox.innerHTML = "<h3>" + flashcards[questionNumber].question + "</h3>"  
+    // document.querySelector('#answerCheck').style.display = "none"
    getNextQuestion()
 }
 
