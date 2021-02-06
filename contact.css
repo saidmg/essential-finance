@@ -4,43 +4,37 @@ body{
     
 }
 .card{
-    /* background-color: transparent ; */
-    margin-top: 50px !important;
-    
+    background-color: transparent ;
+    margin-top: 150px !important;
+    margin-left: 10px;
 }
 
-#image0,#image1,#image2,#image3,#image4{ 
+.image0{ 
     margin-top: 50px;
     transition: transform .8s; 
     z-index: 0;
 }
 
-#image0:hover,#image1:hover,#image2:hover,#image3:hover,#image4:hover{
+.image0:hover{
 
   -ms-transform: scale(1.5);
   -webkit-transform: scale(1.5);
   transform: scale(1.5); 
   z-index: 1;
 }
-  
-
-
 #gitt{
    
    height: 50px;
-   width: 50px;
+   width: 40px;
    font-size: 35px;
    color: white !important ;
-  
+   margin-right: 0.2px;
+   margin-left: 15px; 
+   margin-top: 40px;
+   margin-bottom: -20px;
+   transition: transform .8s; 
 }
 
-#gitt { 
-    margin-left: 15px;
-   
-    margin-top: 40px;
-    margin-bottom: -20px;
-    transition: transform .8s; 
-    }
 #gitt:hover{
     -ms-transform: scale(1.9);
   -webkit-transform: scale(1.9);
@@ -53,13 +47,11 @@ body{
     color: white;
     margin: 0px;
     margin-top: 5%;
-
 }
 
 h2{
     text-align: center;
     color: white;
-
 }
 
 
