@@ -112,7 +112,7 @@ section {
         box-sizing: border-box;
       }
       #section02 a span::after {
-        position: absolute;
+        position: relative;
         top: 50%;
         left: 50%;
         content: '';
@@ -134,7 +134,7 @@ section {
         left: 50%;
         width: 30px;
         height: 50px;
-        margin-left: -15px;
+        margin-left: -40px;
         border: 2px solid #fff;
         border-radius: 50px;
         box-sizing: border-box;
