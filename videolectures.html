@@ -19,7 +19,7 @@
 <body>
     <style>
         .accordion-button {
-    
+    display: block;
     color:white;
 }
 /* .accordion-button:not(.collapsed) {
@@ -137,6 +137,9 @@
   height: 100%;
   border: none;
 }
+/* button[aria-expanded="true"]{
+  background-color: #42DCA3;
+} */
     </style>
     <header>
         <h1 class="abc">Financial Website</h1>
@@ -163,8 +166,8 @@
                             News</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle centertabs" href="#" id="navbarDropdownMenuLink"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                        <a class="nav-link dropdown-toggle centertabs active" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(9, 11, 58) ;">
                             KnowledgeBase
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -185,88 +188,72 @@
         </div>
     </nav>
     <br>
-    <!--Video Lectures-->
-    <div class="container">
+    <!--Video Lecturess-->
+    <div class="container" style=" min-height: calc(100vh - 2.7rem); ">
        
         <h1 style="text-align: center; margin-top: 5%;">Video Library </h1>
         <div class="accordion" id="accordionExample" style="text-align: center;">
             <div class="accordion-item" style="text-align: center;">
                 <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button "  type="button" data-bs-toggle="collapse" style="color: white; text-align: center;"
-                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <button onclick="functionList()" class="accordion-button "  type="button" data-bs-toggle="collapse" style="color: white; text-align: center;"
+                        data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne">
                             (Click Me to access videos library!)
                     </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
                     <!--This will show the subCategories of the videos-->
-                    <div class="accordion-body">
-                        <button class="btn btn-primary" type="button" onclick="functionA()" style="margin: 1%;"> TFSA 101 </button>
-                        <button class="btn btn-primary" type="button" onclick="functionB()"style="margin: 1%;">RRSP 101 </button>
-                        <button class="btn btn-primary" type="button" onclick="functionC()"style="margin: 1%;">RESP 101 </button>
+                    <div class="accordion-body btn-group-vertical">
+                        <button onclick="functionA()" class="accordion-button " type="button" data-bs-toggle="collapse" style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne"> TFSA 101 </button>
+                        <button onclick="functionB()" class="accordion-button " type="button" data-bs-toggle="collapse" style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne"> RRSP 101 </button>
+                        <button onclick="functionC()" class="accordion-button " type="button" data-bs-toggle="collapse" style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne"> RESP 101 </button>
                      
-                        </button>
                     </div>
                 </div>
             </div>
 
         </div>
 
-
         <!--TFSA videos-->
         <div id="carouselExampleControls" class="carousel slide TFSA TFSASlides" data-interval="false">
             <!--Selecting tool-->
             <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                    </li>
-                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function1()"> TFSA 101 </button></li>
-                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function2()"> Mistakes </button></li>
-                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function3()"> OverContribution </button></li>
-                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function4()"> Dividends </button></li>
-                    <li class="page-item">
-                    </li>
-                </ul>
+                
+                
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video"  onclick="function1()"> What is a TFSA? </button></li>
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" onclick="function2()"> Mistakes </button></li>
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video"  onclick="function3()"> OverContribution </button></li>
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video"  onclick="function4()"> Dividends </button></li>
+                      
             </nav>
-            <div class="carousel-inner " id="portfolioCarousel" style="padding-left: 23%;">
+           
                 <div id="TFSA" class="carousel-item active 1 container1 ">
-                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/e3Iu1JrhaMY" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px;" allowfullscreen></iframe>
+                    <iframe class="responsive-iframe"  src="https://www.youtube.com/embed/e3Iu1JrhaMY" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px"  allowfullscreen></iframe>
                 </div>
                 <div id="Mistakes" class="carousel-item 2 container1">
-                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/WdsO4F302SM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px;" allowfullscreen></iframe>
+                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/WdsO4F302SM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px; " allowfullscreen></iframe>
                 </div>
                 <div id="overcontributing" class="carousel-item 3 container1">
-                    <iframe  class="responsive-iframe" src="https://www.youtube.com/embed/P-6F83ucN8Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px;" allowfullscreen></iframe>
+                    <iframe  class="responsive-iframe" src="https://www.youtube.com/embed/P-6F83ucN8Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px" allowfullscreen></iframe>
                 </div>
                 <div id="dividend" class="carousel-item 4 container1">
-                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/qYwhLc3kHJE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px;" allowfullscreen></iframe>
+                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/qYwhLc3kHJE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px" allowfullscreen></iframe>
                 </div>
 
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </a>
-        </div>
+          
 
         <!--RRSP videos-->
         <div id="carouselExampleControls2" class="carousel slide RRSP RRSPSlides" data-interval="false">
             <!--Selecting tool-->
             <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                    </li>
-                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn"type="button" style="margin: 10px;" onclick="function5()"> RRSP 101 </button></li>
-                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn"type="button" style="margin: 10px;" onclick="function6()"> Mistakes with RRSP </button></li>
-                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function7()"> LifeLong Learning plan </button></li>
-                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function8()"> Homebuyer's Plan </button></li>
-                    <li class="page-item">
-                    </li>
-                </ul>
+                
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne"onclick="function5()"> What is an RRSP? </button></li>
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne"onclick="function6()"> Mistakes with RRSP </button></li>
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne" onclick="function7()"> LifeLong Learning plan </button></li>
+                    <button class="accordion-button " type="button" style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne" onclick="function8()"> Homebuyer's Plan </button></li>
+                   
+                 
             </nav>
             <div class="carousel-inner" id="portfolioCarousel">
                 <div id="RRSP" class="carousel-item active container1">
@@ -283,28 +270,17 @@
                 </div>
               
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </a>
+        
         </div>
 
         <!--RESP-->
         <div id="carouselExampleControls3" class="carousel slide RESP RESPSlides" data-interval="false">
              <!--Selecting tool-->
              <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                    </li>
-                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function9()"> RESP 101 </button></li>
-                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function10()"> Canada Education Savings Grant </button></li>
-                    <li class="page-item">
-                    </li>
-                </ul>
+                
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne" onclick="function9()"> What is an RESP? </button></li>
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne" onclick="function10()"> Canada Education Savings Grant </button></li>
+                    
             </nav>
             <div class="carousel-inner" id="portfolioCarousel">
                 <div id="RESP" class="carousel-item container1">
@@ -314,17 +290,8 @@
                     <iframe class="responsive-iframe" width="200px" height="700px" class="d-block w-100" style="padding: 70px" src="https://www.youtube.com/embed/AFNHAnD6R9c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls3" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls3" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </a>
+          
         </div>
-
-       
 
 
         <script>
@@ -333,19 +300,34 @@
 
 
             // global variables
-            var vidRRSP = document.getElementById('RRSP');
-            var vidHBP = document.getElementById('HBP');
-            var vidRESP = document.getElementById('RESP');
-            var vidTFSA = document.getElementById('TFSA')
-            var vidBUDGET = document.getElementById('Budget');
+            var vid1 = document.getElementById('TFSA')
+            var vid2 = document.getElementById('overcontributing').removeAttribute('autoplay')
+            var vid3 = document.getElementById('dividend').removeAttribute('autoplay')
+            
+            // var vid4 =
+            // var vid5 = 
+            // var vid6 = 
+            // var vid7 = 
+            // var vid8 = 
+            // var vid9 = 
+            // var vid10= 
+
+            function functionList(){
+            // to close All tabs 
+            // aria-expanded===false
+            //    if (document.getElementById('video').ontoggle = true){
+            //     document.getElementById('List1').classList.add("visually-hidden")
+            //    }
+            }
+            
 
             //TFSA
             function functionA() {
                 document.querySelector('.RRSP').classList.add('RRSPSlides')
                 document.querySelector('.RESP').classList.add('RESPSlides')
                 document.querySelector('.TFSA').classList.remove('TFSASlides')
-        
-
+                // document.getElementById('List1').setAttribute("visibility, visible")
+             
             }
 
            function function1(){
@@ -353,7 +335,9 @@
                 document.getElementById('overcontributing').classList.remove('active')
                 document.getElementById('TFSA').classList.add('active')
                 document.getElementById('dividend').classList.remove('active')
-
+                // vid1.style.display = vid1.style.display === 'none'? '' : 'none';
+                
+            
            }
 
            function function2(){
@@ -361,7 +345,6 @@
                 document.getElementById('overcontributing').classList.remove('active')
                 document.getElementById('TFSA').classList.remove('active')
                 document.getElementById('dividend').classList.remove('active')
-
            }
 
            function function3(){
@@ -383,9 +366,8 @@
                 document.querySelector('.TFSA').classList.add('TFSASlides')
                 document.querySelector('.RESP').classList.add('RESPSlides')
                 document.querySelector('.RRSP').classList.remove('RRSPSlides')
-
+            
             }
-
 
             function function5(){  
                 document.getElementById('RRSP').classList.add('active')
@@ -393,8 +375,6 @@
                 document.getElementById('homeBuyer').classList.remove('active')
                 document.getElementById('mistakes').classList.remove('active')
             }
-
-
 
             function function6 (){
                 document.getElementById('RRSP').classList.remove('active')
@@ -437,7 +417,6 @@
                 document.getElementById('CESG').classList.add('active')
                 document.getElementById('RESP').classList.remove('active')
             }
-            
 
         </script>
         <script src="script.js"></script>
