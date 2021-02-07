@@ -101,9 +101,9 @@ var dayyy
 function getDateFormat(){
     yearMonth = moment().format("Y-MM");
     
-    if ((moment().subtract(1, 'days')["_d"]["getDay"]())<10)
-     {dayyy=`0${moment().subtract(1, 'days')["_d"]["getDay"]()}`}
-    else{dayyy =`${moment().subtract(1, 'days')["_d"]["getDay"]()}`}
+    if ((moment().subtract(2, 'days')["_d"]["getDay"]())<10)
+     {dayyy=`0${moment().subtract(2, 'days')["_d"]["getDay"]()}`}
+    else{dayyy =`${moment().subtract(2, 'days')["_d"]["getDay"]()}`}
     yearMonth += `-${dayyy}`
 
 }
