@@ -188,7 +188,7 @@ button[aria-expanded="true"]{
         </div>
     </nav>
     <br>
-    <!--Video Lecturess-->
+    <!--Video Lectures-->
     <div class="container">
        
         <h1 style="text-align: center; margin-top: 5%;">Video Library </h1>
@@ -203,28 +203,59 @@ button[aria-expanded="true"]{
                 <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
                     <!--This will show the subCategories of the videos-->
-                    <div class="accordion-body btn-group-vertical">
-                        <button onclick="functionA()" class="accordion-button " type="button" data-bs-toggle="collapse" style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne"> TFSA 101 </button>
-                        <button onclick="functionB()" class="accordion-button " type="button" data-bs-toggle="collapse" style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne"> RRSP 101 </button>
-                        <button onclick="functionC()" class="accordion-button " type="button" data-bs-toggle="collapse" style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne"> RESP 101 </button>
+                    <div class="accordion-body">
+                        <button class="btn btn-primary" type="button" onclick="functionA()" style="margin: 1%;"> TFSA 101 </button>
+                        <button class="btn btn-primary" type="button" onclick="functionB()"style="margin: 1%;">RRSP 101 </button>
+                        <button class="btn btn-primary" type="button" onclick="functionC()"style="margin: 1%;">RESP 101 </button>
                      
+                        </button>
                     </div>
                 </div>
             </div>
 
         </div>
 
+
         <!--TFSA videos-->
         <div id="carouselExampleControls" class="carousel slide TFSA TFSASlides" data-interval="false">
+            <div class="accordion" id="accordionExample" style="text-align: center;">
+                <div class="accordion-item" style="text-align: center;">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button "  type="button" data-bs-toggle="collapse" style="color: white; text-align: center;"
+                            data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne">
+                                        TFSA videos</h2>
+
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination justify-content-center">
+                                                <li class="page-item" >
+                                                </li>
+                                                <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function1()"> TFSA 101 </button></li>
+                                                <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function2()"> Mistakes </button></li>
+                                                <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function3()"> OverContribution </button></li>
+                                                <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function4()"> Dividends </button></li>
+                                                <li class="page-item">
+                                                </li>
+                                            </ul>
+                                        </nav>
+                        
+                        </button>
+                        </div>
+                    
+                </div>
+    
+            </div>
             <!--Selecting tool-->
             <nav aria-label="Page navigation example">
-                
-                
-                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video"  onclick="function1()"> What is a TFSA? </button></li>
-                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" onclick="function2()"> Mistakes </button></li>
-                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video"  onclick="function3()"> OverContribution </button></li>
-                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video"  onclick="function4()"> Dividends </button></li>
-                      
+                <ul class="pagination justify-content-center">
+                    <li class="page-item" >
+                    </li>
+                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function1()"> TFSA 101 </button></li>
+                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function2()"> Mistakes </button></li>
+                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function3()"> OverContribution </button></li>
+                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function4()"> Dividends </button></li>
+                    <li class="page-item">
+                    </li>
+                </ul>
             </nav>
            
                 <div id="TFSA" class="carousel-item active 1 container1 ">
@@ -241,19 +272,30 @@ button[aria-expanded="true"]{
                 </div>
 
             </div>
-          
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
 
         <!--RRSP videos-->
         <div id="carouselExampleControls2" class="carousel slide RRSP RRSPSlides" data-interval="false">
             <!--Selecting tool-->
             <nav aria-label="Page navigation example">
-                
-                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne"onclick="function5()"> What is an RRSP? </button></li>
-                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne"onclick="function6()"> Mistakes with RRSP </button></li>
-                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne" onclick="function7()"> LifeLong Learning plan </button></li>
-                    <button class="accordion-button " type="button" style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne" onclick="function8()"> Homebuyer's Plan </button></li>
-                   
-                 
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                    </li>
+                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn"type="button" style="margin: 10px;" onclick="function5()"> RRSP 101 </button></li>
+                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn"type="button" style="margin: 10px;" onclick="function6()"> Mistakes with RRSP </button></li>
+                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function7()"> LifeLong Learning plan </button></li>
+                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function8()"> Homebuyer's Plan </button></li>
+                    <li class="page-item">
+                    </li>
+                </ul>
             </nav>
             <div class="carousel-inner" id="portfolioCarousel">
                 <div id="RRSP" class="carousel-item active container1">
@@ -270,17 +312,28 @@ button[aria-expanded="true"]{
                 </div>
               
             </div>
-        
+            <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
         </div>
 
         <!--RESP-->
         <div id="carouselExampleControls3" class="carousel slide RESP RESPSlides" data-interval="false">
              <!--Selecting tool-->
              <nav aria-label="Page navigation example">
-                
-                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne" onclick="function9()"> What is an RESP? </button></li>
-                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne" onclick="function10()"> Canada Education Savings Grant </button></li>
-                    
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                    </li>
+                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function9()"> RESP 101 </button></li>
+                    <li class="page-item"><button class="btn btn-secondary btn-sm trialbtn" type="button" style="margin: 10px;" onclick="function10()"> Canada Education Savings Grant </button></li>
+                    <li class="page-item">
+                    </li>
+                </ul>
             </nav>
             <div class="carousel-inner" id="portfolioCarousel">
                 <div id="RESP" class="carousel-item container1">
@@ -290,8 +343,17 @@ button[aria-expanded="true"]{
                     <iframe class="responsive-iframe" width="200px" height="700px" class="d-block w-100" style="padding: 70px" src="https://www.youtube.com/embed/AFNHAnD6R9c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-          
+            <a class="carousel-control-prev" href="#carouselExampleControls3" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls3" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
         </div>
+
+       
 
 
         <script>

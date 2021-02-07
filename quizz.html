@@ -17,6 +17,132 @@
 </head>
 
 <body>
+
+    <style>
+        .wider{width: 100%;}
+.row {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.visuallyhidden {
+    opacity: 0;
+}
+.accordion-button {
+    
+    color:white;
+}
+/* .accordion-button:not(.collapsed) {
+    color: rgb(235, 83, 24);
+    background-color: transparent;
+} */
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transform: rotate(180deg);
+}
+
+@media only screen and (min-width: 800px) {
+    /* Medium and Large devices (laptops/desktops, 800px and up) */
+
+    .accordion-body2 {
+        /* padding: 1rem 43%; */
+    }
+
+    .accordion-button {
+        display: block;
+        color:white;
+    }
+
+    .score-button {
+        width: 40%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 799px) {
+    /* small devices (laptops/desktops, 800px and up) */
+
+    .score-button {
+        width: 100%;
+        margin: auto;
+    }
+    h5{
+        font-size: 13.28px;
+    }
+}
+
+
+button {
+    display: block;
+    margin: 0 auto;
+}
+
+.accordion-button:not(.collapsed) {
+    color:white;
+    background-color: transparent;
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    border-color: rgb(255, 251, 249);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem white;
+}
+
+.accordion-collapse1 {
+    border: solid rgba(245, 238, 238, 0.836);
+    background-color: rgb(247, 241, 239);
+    color: rgb(9, 11, 58);
+    border-width: 0 1px;
+    text-align: center;
+    margin: auto;
+}
+.accordion-button {width: fit-content;}
+
+.accordion-flush .accordion-item:first-of-type .accordion-button {
+    background-color: transparent;
+    color:white;
+}
+
+#myProgress {
+    padding: 10px;
+    width: 100%;
+    background-color: rgb(247, 242, 240);
+}
+
+.correct {
+    color: rgb(10, 146, 236);
+}
+
+.wrong {
+    color: rgb(252, 140, 49);
+}
+.input-group .btn{color: white;}
+#myBar {
+    width: 100%;
+    height: 20px;
+    background-color:  rgb(9, 11, 58);
+    text-align: center;
+    line-height: 20px;
+    color: white;
+}
+h1,
+h3 {
+    text-align: center;
+}
+
+.box {
+  
+    margin: 30px auto;
+    transition: all 1s linear;
+}
+.full-height{
+min-height: calc(100vh - 18.7rem)}
+    </style>
     <header>
         <h1 class="abc">Financial Website</h1>
     </header>
@@ -38,7 +164,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link li1" href="stockNews.html" style="color: white;">Stock
+                        <a onclick="getArticles()" class="nav-link li1" href="stockNews.html" style="color: white;">Stock
                             News</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -50,12 +176,13 @@
                             <li><a class="dropdown-item" href="flashcard.html">Flash Cards</a></li>
                             <li><a class="dropdown-item active" href="quizz.html"
                                     style="color: rgb(9, 11, 58) ;">Quizz</a></li>
+                                    <li><a class="dropdown-item" href="videolectures.html">Video Lectures</a></li>
                             <!-- <li><a class="dropdown-item" href="#">Something else </a></li> -->
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link  li1" href="videolectures.html" style="color: white;">video Lectures</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html" style="color: white;">Contact</a>
                     </li>
@@ -64,7 +191,362 @@
         </div>
     </nav>
 
+    <!-- <h1></h1> -->
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne" style="margin-top: 0.4%;">
+                <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    <h4>Instructions</h4>
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse accordion-collapse1 collapse"
+                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <h5 style="text-align: center;">This quizz consists of questions related to finance.
+                        There will be a timer of 60 seconds after you click the Start button.
+                        If you answer correctly your score increases by 10 points whereas if you answer wrong
+                        the score decreases by 5 % ! Once you answer a question you can't return back to it.
+                        The quiz ends by answering all the questions or when the time is up.
+                        Good Luck having your name in the top of the Highscore List!</h5>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+                <button onclick="saveScoreBefore()" class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                    aria-controls="flush-collapseTwo">
+                    <h4>HighScore</h4>
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body accordion-body2">
+                    <h5>
+                        <div class="card" style="width: fit-content; margin: auto;">
+                            <div class="card-header" style="color: rgb(9, 11, 58); text-align: center;">
+                                HighScores
+                            </div>
+                            <ul class="list-group list-group-flush" style=" text-align: center; color:black;"
+                                id="list-group">
+
+                            </ul>
+                            <div class="card-footer">
+                                <button onclick="clearAll()" class="btn btn-light wider" style="background-color: rgb(9, 11, 58) ;color: white;">Clear Scores</button>
+                              </div>
+                        </div>
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+
+
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div id="myProgress">
+                <div id="myBar">1 Minute Timer</div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+
+    </div>
+    <div>
+        <p id="answerOutput" style="text-align: center;"> </p>
+    </div>
+
+    <div class="container full-height test3" style="">
+        <div class="row box question1 " id="box1">
+            <div class="col-3"></div>
+            <div class="col-6"><button onclick="hideQuestion()" id="button1" style="width: 100%;">Start The
+                    Quizz</button></div>
+            <div class="col-3"></div>
+
+
+        </div>
+        <div class="row box question2 hidden visuallyhidden " id="box2"></div>
+        <div class="row box question3 hidden visuallyhidden" id="box3"></div>
+        <div class="row box question4 hidden visuallyhidden" id="box4"></div>
+        <div class="row box question5 hidden visuallyhidden" id="box5"></div>
+        <div class="row box question6 hidden visuallyhidden" id="box6"></div>
+        <div class="row box question7 hidden visuallyhidden" id="box7"></div>
+        <div class="row box question8 hidden visuallyhidden" id="box8"></div>
+        <div class="row box question9 hidden visuallyhidden" id="box9"></div>
+        <div class="row box question10 hidden visuallyhidden" id="box10"></div>
+        <div class="row box finished hidden visuallyhidden" id="box11"></div>
+
+
+
+    </div>
+
+
+    
     <script src="script.js"></script>
+    <script>
+        var quizzQuestions = {
+    quest2: { question: "What is a stock?", answer1: "An investment tool that represents ownership in a company. An investor profits from the increase in the growth of the company, which then results in their stock increasing in price as well", answer2: "type of company that you can hold to buy a house", answer3: "a type of line of credit to make you a lot of money", correctAnswer: "An investment tool that represents ownership in a company. An investor profits from the increase in the growth of the company, which then results in their stock increasing in price as well" },
+    quest3: { question: "What are bonds?", answer1: "A bond is a type of promise a bank makes to their clients for the future", answer2: "Bonds are a “fixed income” investment tool that is basically a loan made from an investor, to a borrower (usually a company).", answer3: "It is a form of investment to help reduce your taxes in the future", correctAnswer: "Bonds are a “fixed income” investment tool that is basically a loan made from an investor, to a borrower (usually a company)." },
+    quest4: { question: "What are GICs and treasury bills?", answer1: "A GIC is a guaranteed investor counsel who help you find good investments", answer2: "A GIC is a guaranteed investment certificate that guarantees your invested amount with some interest.", answer3: "A GIC is a good investment calculator which calculates how much return you earn from your investment", correctAnswer: "A GIC is a guaranteed investment certificate that guarantees your invested amount with some interest." },
+    quest5: { question: "What is a savings and chequing account?", answer1: "A chequing account is often used as an account for keeping cash for everyday needs. Savings account is an account usually is used to save some money for the future, and it may earn some interest depending on your bank", answer2: "A chequing account is where the bank pays you cheques. A savings account is where the bank allows you to withdraw free money", answer3: "A chequing account is not a real account. There are only savings account", correctAnswer: "A chequing account is often used as an account for keeping cash for everyday needs. Savings account is an account usually is used to save some money for the future, and it may earn some interest depending on your bank" },
+    quest6: { question: "What are Dividends?", answer1: "Dividends are divided stocks that are paid for in the end", answer2: "Money that is owed to you from 10 different people", answer3: "Dividends are cash payments made from the company’s profit, which are paid to shareholders.", correctAnswer: "Dividends are cash payments made from the company’s profit, which are paid to shareholders." },
+    quest7: { question: "What are mutual funds?", answer1: "It is an actively managed pool of funds and Investors purchase units of the mutual fund.", answer2: "A mutual agreement between the bank and client to always protect hisor her account", answer3: "A type of of savings account that help you become a millionaire", correctAnswer: "It is an actively managed pool of funds and Investors purchase units of the mutual fund." },
+    quest8: { question: "What is an Exchange traded Fund?", answer1: "A type of foreign exchange fund that helps you convert money  faster", answer2: "A liability that you have to pay back to the bank", answer3: "An exchange traded fund is another type of pooled invested that is passively managed.", correctAnswer: "An exchange traded fund is another type of pooled invested that is passively managed." },
+    quest9: { question: "What is diversification?", answer1: "Investing in a few stocks, bonds, GICS and etc. Instead of putting all your money into one basket, you are putting the funds in several investments.", answer2: "Diversifying your chequing accounts to have lower account fees", answer3: "There is no such thing as diversification. Just put all your money in one stock to get the most money", correctAnswer: "Investing in a few stocks, bonds, GICS and etc. Instead of putting all your money into one basket, you are putting the funds in several investments." },
+    quest10: { question: "What is a stock?", answer1: "An investment tool that represents part ownership in a company.", answer2: "type of company that you can hold to buy a house or land", answer3: "a type of line of credit to make you a lot of money", correctAnswer: "An investment tool that represents part ownership in a company." },
+    quest11: { question: "What are hedge funds?", answer1: "A small group of investors who come together to invest money", answer2: "A pooled fund that use complex strategies to gain returns for investors", answer3: "Investors that invest into stocks internationally to gain an edge over other investors", correctAnswer: "A pooled fund that use complex strategies to gain returns for investors"  },
+}
+var clickcount = 1;
+var counter = 1;
+var questionCounter = "quest" + (counter + 1);
+var btn;
+var box;
+var i = 0;
+var Score = 0;
+var myVar;
+function timerr() {
+    clickcount--;
+    clearInterval(myVar)
+}
+function hideQuestion() {
+    window.scrollTo(0,document.body.scrollHeight);
+
+    if (clickcount < 2) {
+
+        clickcount++;
+        if (counter === 1) { move(); }
+        box = document.querySelector(`.question${counter}`),
+            btn = document.querySelector(`#button${counter}`);
+
+
+        if (counter == 10) {
+            quizzScore();
+            counter++;
+            box.classList.add('visuallyhidden');
+            box.addEventListener('transitionend', function (e) {
+                box.classList.add('hidden');
+            }, {
+                capture: false,
+                once: true,
+                passive: false
+            })
+            console.log(`counter is ${counter}`)
+            var test2 = document.querySelector(`.finished`)
+            test2.innerHTML = `
+        <h3>Congratulations You Finished !</h3>
+        <h2> Score: ${Score}</h2>
+        <div class="input-group mb-6 score-button" >
+            <button onclick ="saveScore()" class="btn btn-outline-secondary" type="button" id="button-addon1">Submit Your Name</button>
+            <input type="text" class="form-control" id="scoreName" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+            </div><p id="alert" style="color:white ;width:70%; margin:auto;">Please Write Your Name</p>
+
+        
+        `
+            test2.classList.remove('hidden');
+            setTimeout(function () {
+                test2.classList.remove('visuallyhidden');
+            }, 1000);
+            myVar = setInterval(timerr, 1000);
+
+
+        } else {
+            quizzScore();
+            if (counter === 1) {
+                box.classList.add('visuallyhidden');
+                box.addEventListener('transitionend', function (e) {
+                    box.classList.add('hidden');
+                }, {
+                    capture: false,
+                    once: true,
+                    passive: false
+                }); counter++;
+                questionCounter = "quest" + (counter + 1);
+                var test = document.querySelector(`.question${counter}`)
+                test.innerHTML = `
+        <p>${quizzQuestions[questionCounter].question}</p>
+        <div id="question${counter}">
+            <input type="radio" id="answer${counter}1" name="answer" value="${quizzQuestions[questionCounter].answer1}">${quizzQuestions[questionCounter].answer1}<br>
+            <input type="radio" id="answer${counter}2" name="answer" value="${quizzQuestions[questionCounter].answer2}">${quizzQuestions[questionCounter].answer2}<br>
+            <input type="radio" id="answer${counter}3" name="answer" value="${quizzQuestions[questionCounter].answer3}">${quizzQuestions[questionCounter].answer3}<br><br>
+            <button onclick="hideQuestion()" id="button${counter}">Submit This Answer</button>   
+        `
+                test.classList.remove('hidden');
+                setTimeout(function () {
+                    test.classList.remove('visuallyhidden');
+                }, 1000); myVar = setInterval(timerr, 1000);
+
+
+            }
+            else {
+                if (document.getElementById(`answer${counter}1`).checked || document.getElementById(`answer${counter}2`).checked ||
+                    document.getElementById(`answer${counter}3`).checked) {
+                    box.classList.add('visuallyhidden');
+                    box.addEventListener('transitionend', function (e) {
+                        box.classList.add('hidden');
+                    }, {
+                        capture: false,
+                        once: true,
+                        passive: false
+                    }); counter++;
+                    questionCounter = "quest" + (counter + 1);
+                    var test = document.querySelector(`.question${counter}`)
+                    test.innerHTML = `
+        <p>${quizzQuestions[questionCounter].question}</p>
+        <div id="question${counter}">
+            <input type="radio" id="answer${counter}1" name="answer" value="${quizzQuestions[questionCounter].answer1}">${quizzQuestions[questionCounter].answer1}<br>
+            <input type="radio" id="answer${counter}2" name="answer" value="${quizzQuestions[questionCounter].answer2}">${quizzQuestions[questionCounter].answer2}<br>
+            <input type="radio" id="answer${counter}3" name="answer" value="${quizzQuestions[questionCounter].answer3}">${quizzQuestions[questionCounter].answer3}<br><br>
+            <button onclick="hideQuestion()" id="button${counter}">Submit This Answer</button>   
+        `
+                    test.classList.remove('hidden');
+                    setTimeout(function () {
+                        test.classList.remove('visuallyhidden');
+                    }, 1000); myVar = setInterval(timerr, 1000);
+
+
+                }
+                else {
+                    document.getElementById("answerOutput").classList.add("wrong");
+                    document.getElementById("answerOutput").innerHTML = "Please choose one of the answer"
+                    myVar = setInterval(timerr, 1000);
+
+
+                }
+            }
+        }
+    }
+};
+var width;
+function move() {
+    if (i == 0) {
+        i = 1;
+        var elem = document.getElementById("myBar");
+        width = 100;
+        var id = setInterval(frame, 584);
+        function frame() {
+            if (width <= 0 || counter == 11) {
+                if (width <= 0) {
+
+
+                    box = document.querySelector(`.question${counter}`),
+                        box.classList.add('visuallyhidden');
+                    box.addEventListener('transitionend', function (e) {
+                        box.classList.add('hidden');
+                    }, {
+                        capture: false,
+                        once: true,
+                        passive: false
+                    })
+                    console.log(`counter is ${counter}`)
+                    counter = 11;
+                    var test2 = document.querySelector(`.finished`)
+                    test2.innerHTML = `
+        <h3>Time IS UP! Hard Luck!</h3>
+        <h2> Score: ${Score}</h2>
+        <div class="input-group mb-6 score-button" >
+            <button onclick ="saveScore()" class="btn btn-outline-secondary" type="button" id="button-addon1">Submit Your Name</button>
+            <input type="text" class="form-control" id="scoreName" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+            </div><p id="alert" style=" color:white ;width:70%; margin:auto;">Please Write Your Name</p>
+
+        
+        `
+                    test2.classList.remove('hidden');
+                    setTimeout(function () {
+                        test2.classList.remove('visuallyhidden');
+                    }, 1000);
+
+                }
+                clearInterval(id);
+                i = 0;
+            } else {
+                width--;
+                elem.style.width = width + "%";
+                elem.innerHTML = width + "%";
+            }
+        }
+    }
+}
+function quizzScore() {
+
+    if (counter >= 2) {
+        for (var i = 1; i < 4; i++) {
+            var b = document.getElementById(`answer${counter}${i}`)
+            if (b.checked) {
+                console.log(b.value)
+                if (b.value == quizzQuestions[questionCounter].correctAnswer) {
+                    console.log(`${b.value} is a correct answer!`)
+                    if (document.getElementById("answerOutput").classList.contains("wrong")) {
+                        document.getElementById("answerOutput").classList.remove('wrong');
+                    }
+                    document.getElementById("answerOutput").classList.add("correct");
+                    document.getElementById("answerOutput").innerText = `Correct answer! => Score increased by 10 pts`
+                    Score += 10
+                    console.log(Score)
+                }
+                else {
+                    document.getElementById("answerOutput").classList.add("wrong");
+                    width = width - 5;
+                    if (document.getElementById("answerOutput").classList.contains("correct")) {
+                        document.getElementById("answerOutput").classList.remove('correct');
+                    }
+                    document.getElementById("answerOutput").innerText = `Wrong answer! => Time decreased by 5 %`
+                }
+            }
+        }
+    }
+}
+var justOnce = 1
+var testObject = {}
+var nbrOfTimes
+var arraytest = []
+function saveScoreBefore() {
+    if (justOnce === 1) {
+        if (localStorage.getItem('arraytest')) {
+            var retrievedObject = localStorage.getItem('arraytest');
+            for (var t = 0; t < JSON.parse(retrievedObject).length; t++) {
+                var theName = JSON.parse(retrievedObject)[t].quiz.name;
+                var theScore = JSON.parse(retrievedObject)[t].quiz.score;
+                const li = document.createElement('li')
+                li.setAttribute('class', 'list-group-item')
+                li.textContent = `${theName}  : ${theScore} pts`
+                document.getElementById('list-group').appendChild(li)
+            }
+            justOnce++
+        }
+    }
+}
+
+function saveScore() {
+    if (counter === 11) {
+        if (document.getElementById("scoreName").value === "") {
+            document.getElementById("alert").innerText = "Please Write Your Name"
+        }
+        else {
+            var userName = document.getElementById('scoreName').value
+            if (localStorage.getItem('arraytest')) {
+                var retrievedObject = localStorage.getItem('arraytest');
+                arraytest = JSON.parse(retrievedObject)
+            }
+            arraytest.push({ 'quiz': { 'name': `${userName}`, 'score': `${Score}` } });
+            localStorage.setItem('arraytest', JSON.stringify(arraytest));
+            location.reload();
+
+        }
+    }
+}
+
+function clearAll(){
+    localStorage.clear()
+    while( document.getElementById('list-group')){
+        document.getElementById('list-group').remove()
+    }
+
+    
+}
+    </script>
 
 </body>
 
