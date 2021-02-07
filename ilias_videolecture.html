@@ -85,37 +85,24 @@
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body">
         <ul>
-            <li><button onclick="functionA()">a</button></li>
-            <li><button onclick="functionB()">b</button></li>
-            <li><button onclick="functionC()">c</button></li>
+            <li><button onclick="functionA()">TFSA</button></li>
+            <li><button onclick="functionB()">RRSP</button></li>
+            <li><button onclick="functionC()">HBP</button></li>
         </ul>
             </div>
           </div>
         </div>
-function functionA(){
-    if(document.queryselector('#a').classLIst.contains("active"))
-    if(document.queryselector('#b').classLIst.contains("active"))
-    if(document.queryselector('#c').classLIst.contains("active"))
-}
-function functionB(){
-    if(document.queryselector('#a').classLIst.contains("active"))
-    if(document.queryselector('#b').classLIst.contains("active"))
-    if(document.queryselector('#c').classLIst.contains("active"))
-}
-function functionC(){
-    if(document.queryselector('#a').classLIst.contains("active"))
-    if(document.queryselector('#b').classLIst.contains("active"))
-    if(document.queryselector('#c').classLIst.contains("active"))
-}
+
+
     <div id="carouselExampleControls" class="carousel slide" data-interval="false">
         <div class="carousel-inner" id= "portfolioCarousel">
-          <div id="a" class="carousel-item ">
+          <div id="TFSA" class="carousel-item active">
             <iframe  src="https://www.youtube.com/embed/e3Iu1JrhaMY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px;" allowfullscreen></iframe>
           </div>
-          <div  id="b" class="carousel-item">
+          <div  id="RRSP" class="carousel-item">
             <iframe src="https://www.youtube.com/embed/ggj2bv7azyQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px;" allowfullscreen></iframe>
           </div>
-          <div  id="c" class="carousel-item active">
+          <div  id="HBP" class="carousel-item">
             <iframe src="https://www.youtube.com/embed/LMrLiIhb00A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px;" allowfullscreen></iframe>
           </div>
         </div>
@@ -158,7 +145,7 @@ function functionC(){
    
         <!-- <i class="arrow down Hero__arrow"></i> -->
         
-    </section>
+    <!-- </section> -->
     <!-- <section id="section02" class="demo test2" style="background-color: black;">
         <div class="container">
             <div class="row">
@@ -181,9 +168,40 @@ function functionC(){
     </section>
  -->
 
+<script>
+            
+function functionA(){
+    if(document.queryselector('#TFSA').classLIst.contains("active")) {}
+    if(document.queryselector('#RRSP').classLIst.contains("active")) {
+        document.queryselector('#RRSP').classLIst.remove("active")
+    }
+    if(document.queryselector('#HBP').classLIst.contains("active")) {
+    document.queryselector('#HBP').classLIst.remove("active")
+}}
 
+function functionB(){
+    if(document.queryselector('#TFSA').classLIst.contains("active")){
+    document.queryselector('#TFSA').classLIst.remove("active")
+    }
+    if(document.queryselector('#RRSP').classLIst.contains("active")){}
 
- <script>
+    if(document.queryselector('#HBP').classLIst.contains("active")) {
+    document.queryselector('#HBP').classLIst.remove("active")
+}}
+
+function functionC(){
+    if(document.queryselector('#TFSA').classLIst.contains("active")){
+    document.queryselector('#TFSA').classLIst.remove("active")
+ }
+
+    if(document.queryselector('#RRSP').classLIst.contains("active")){
+    document.queryselector('#RRSP').classLIst.remove("active")
+ }
+
+    if(document.queryselector('#HBP').classLIst.contains("active"))
+    (document.queryselector('#HBP').classLIst.contains("active")) {}
+}
+
     $('iframe').on('play', function (e) {
         $("#portfolioCarousel").carousel('pause');
     });
