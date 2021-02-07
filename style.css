@@ -273,7 +273,11 @@ section {
 }
 
 @media only screen and (max-width: 500px){
-    .abc {
+    
+  #walletPicture{background-image:url(./Assets/wallet.png);background-size: cover;
+    position: relative;height: 70px;margin-top: 39%;}
+
+  .abc {
         font-size: 180%;
         width: 70%;
     
@@ -333,13 +337,21 @@ section {
 }
 
 @media only screen and (min-width: 1000px) {
+#sangokuPicture{background-image:url(./Assets/sangoku.png);background-size: cover;
+  position: relative;margin-top: 5%;}
+  /* Medium and Large devices (laptops/desktops, 800px and up) */
+  .navbar-nav {
+      position: absolute;
+      right: 4%;}
 
+  #walletPicture{background-image:url(./Assets/wallet.png);background-size: cover;
+    position: relative;height: 200px;margin-top: 2%;}
     /* Medium and Large devices (laptops/desktops, 800px and up) */
     .navbar-nav {
         position: absolute;
         right: 4%;
     }
-    #homePageFont{font-size: 800%;}
+    #homePageFont{font-size: 500%;}
     .col-12{
        width: 50%; margin-left: 14%; margin-top: 15%;
     }
