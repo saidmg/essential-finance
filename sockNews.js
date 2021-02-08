@@ -14,10 +14,10 @@ async function getData() {
     // dailyData["Time Series (Daily)"]["2021-02-01"]["1. open"]
     document.getElementById("dateOfOutput").innerText  =`Daily Prices (${dailyData["Meta Data"]["3. Last Refreshed"]})`
     document.getElementById("lastRefreshed").innerText = `Company: ${dailyData["Meta Data"]["2. Symbol"]} `
-    document.getElementById("yesterdayHigh").innerText = `High: ${dailyData["Time Series (Daily)"][yearMonth]["2. high"]}`
-    document.getElementById("yesterdayLow").innerText = `Low: ${dailyData["Time Series (Daily)"][yearMonth]["3. low"]}`
-    document.getElementById("yesterdayClose").innerText = `Close: ${dailyData["Time Series (Daily)"][yearMonth]["4. close"]}`
-    document.getElementById("yesterdayVolume").innerText = `Volume: ${dailyData["Time Series (Daily)"][yearMonth]["5. volume"]}`
+    document.getElementById("yesterdayHigh").innerText = `High: ${dailyData["Time Series (Daily)"]["2021-02-05"]["2. high"]}`
+    document.getElementById("yesterdayLow").innerText = `Low: ${dailyData["Time Series (Daily)"]["2021-02-05"]["3. low"]}`
+    document.getElementById("yesterdayClose").innerText = `Close: ${dailyData["Time Series (Daily)"]["2021-02-05"]["4. close"]}`
+    document.getElementById("yesterdayVolume").innerText = `Volume: ${dailyData["Time Series (Daily)"]["2021-02-05"]["5. volume"]}`
     // loadScript()
     getGraphValues()
 }
