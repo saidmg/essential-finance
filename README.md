@@ -6,7 +6,7 @@ Essential Finance
 
 A mobile responsive website that can target people who are beginners, intermediate, or experienced with finance and stock. 
 It has 3 tabs for teaching basics and finance related topics. Each tab consists of a different way to learn the material,
- through flashcards, quiz, or videos , giving the user a choice of choosing the method of learning that fits best his personality.
+ through flashcards, quiz, or videos , giving the user a choice of choosing the method of learning that fits best his needs.
 Another main tab is the stock news tab, which consists of a form to input a company symbol in order to get daily prices 
 (Low, close, open, volume)  and then show the closing price of each month for a yearof that company on a graph. Also that tab contains 
 up to date stock related articles.
