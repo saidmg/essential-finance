@@ -17,10 +17,134 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="abc">Financial Website</h1>
-    </header>
+    <style>
+        .accordion-button {
+    display: block;
+    color:white;
+}
+/* .accordion-button:not(.collapsed) {
+    color: rgb(235, 83, 24);
+    background-color: transparent;
+} */
 
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transform: rotate(180deg);
+}
+
+@media only screen and (min-width: 800px) {
+    /* Medium and Large devices (laptops/desktops, 800px and up) */
+
+    .accordion-body2 {
+        padding: 1rem 43%;
+    }
+
+    .accordion-button {
+        display: block;
+        color:white;
+    }
+
+    .score-button {
+        width: 40%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 799px) {
+    /* small devices (laptops/desktops, 800px and up) */
+
+    .score-button {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+
+/* button {
+    display: block;
+    margin: 0 auto;
+} */
+
+.accordion-button:not(.collapsed) {
+    color:white;
+    background-color: transparent;
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    border-color: rgb(255, 251, 249);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem white;
+}
+
+.accordion-collapse1 {
+    border: solid rgba(245, 238, 238, 0.836);
+    background-color: rgb(247, 241, 239);
+    color: rgb(9, 11, 58);
+    border-width: 0 1px;
+}
+
+.accordion-flush .accordion-item:first-of-type .accordion-button {
+    background-color: transparent;
+    color:white;
+}
+
+        .TFSASlides {
+            display: none;
+        }
+
+        .RRSPSlides {
+            display: none;
+        }
+
+        .HBPSlides {
+            display: none;
+        }
+
+        .RESPSlides {
+            display: none;
+        }
+
+        .BudgetSlides {
+            display: none;
+        }
+        .trialbtn {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #0d6efd;
+}
+
+.trialbtn:hover {
+  background-color: #0d6efd;
+  color: white;
+  border-color: white;
+}
+.container1 {
+    margin: auto;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 75%; /* 8:5 Aspect Ratio */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+/* button[aria-expanded="true"]{
+  background-color: #42DCA3;
+} */
+    </style>
+    <header>
+        <h1 class="abc">Essential Finance</h1>
+    </header>
+    <!--NavBar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid" style="background-color: rgb(9, 11, 58) ;">
             <a class="navbar-brand" href="index.html" style="background-color: rgb(9, 11, 58) ;color: white;">Financial
@@ -38,23 +162,24 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link li1" href="stockNews.html" style="color: white;">Stock
+                        <a onclick="getArticles()" class="nav-link li1" href="stockNews.html" style="color: white;">Stock
                             News</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle centertabs" href="#" id="navbarDropdownMenuLink"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                        <a class="nav-link dropdown-toggle centertabs active" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(9, 11, 58) ;">
                             KnowledgeBase
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="flashcard.html">Flash Cards</a></li>
                             <li><a class="dropdown-item" href="quizz.html">Quizz</a></li>
+                            <li><a class="dropdown-item active" href="videolectures.html"  style="color: rgb(9, 11, 58) ;">Video Lectures</a></li>
                             <!-- <li><a class="dropdown-item" href="#">Something else </a></li> -->
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link active li1" href="videolectures.html" style="color: rgb(9, 11, 58) ;">video Lectures</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html" style="color: white;">Contact</a>
                     </li>
@@ -62,9 +187,239 @@
             </div>
         </div>
     </nav>
+    <br>
+    <!--Video Lecturess-->
+    <div class="container" style=" min-height: calc(100vh - 2.7rem); ">
+       
+        <h1 style="text-align: center; margin-top: 5%;">Video Library </h1>
+        <div class="accordion" id="accordionExample" style="text-align: center;">
+            <div class="accordion-item" style="text-align: center;">
+                <h2 class="accordion-header" id="headingOne">
+                    <button onclick="functionList()" class="accordion-button "  type="button" data-bs-toggle="collapse" style="color: white; text-align: center;"
+                        data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne">
+                            (Click Me to access videos library!)
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <!--This will show the subCategories of the videos-->
+                    <div class="accordion-body btn-group-vertical">
+                        <button onclick="functionA()" class="accordion-button " type="button" data-bs-toggle="collapse" style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne"> TFSA 101 </button>
+                        <button onclick="functionB()" class="accordion-button " type="button" data-bs-toggle="collapse" style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne"> RRSP 101 </button>
+                        <button onclick="functionC()" class="accordion-button " type="button" data-bs-toggle="collapse" style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne"> RESP 101 </button>
+                     
+                    </div>
+                </div>
+            </div>
 
-    <script src="script.js"></script>
+        </div>
 
+        <!--TFSA videos-->
+        <div id="carouselExampleControls" class="carousel slide TFSA TFSASlides" data-interval="false">
+            <!--Selecting tool-->
+            <nav aria-label="Page navigation example">
+                
+                
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video"  onclick="function1()"> What is a TFSA? </button></li>
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" onclick="function2()"> Mistakes </button></li>
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video"  onclick="function3()"> OverContribution </button></li>
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video"  onclick="function4()"> Dividends </button></li>
+                      
+            </nav>
+           
+                <div id="TFSA" class="carousel-item active 1 container1 ">
+                    <iframe class="responsive-iframe"  src="https://www.youtube.com/embed/e3Iu1JrhaMY" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px"  allowfullscreen></iframe>
+                </div>
+                <div id="Mistakes" class="carousel-item 2 container1">
+                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/WdsO4F302SM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px; " allowfullscreen></iframe>
+                </div>
+                <div id="overcontributing" class="carousel-item 3 container1">
+                    <iframe  class="responsive-iframe" src="https://www.youtube.com/embed/P-6F83ucN8Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px" allowfullscreen></iframe>
+                </div>
+                <div id="dividend" class="carousel-item 4 container1">
+                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/qYwhLc3kHJE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px" allowfullscreen></iframe>
+                </div>
+
+            </div>
+          
+
+        <!--RRSP videos-->
+        <div id="carouselExampleControls2" class="carousel slide RRSP RRSPSlides" data-interval="false">
+            <!--Selecting tool-->
+            <nav aria-label="Page navigation example">
+                
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne"onclick="function5()"> What is an RRSP? </button></li>
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne"onclick="function6()"> Mistakes with RRSP </button></li>
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne" onclick="function7()"> LifeLong Learning plan </button></li>
+                    <button class="accordion-button " type="button" style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne" onclick="function8()"> Homebuyer's Plan </button></li>
+                   
+                 
+            </nav>
+            <div class="carousel-inner" id="portfolioCarousel">
+                <div id="RRSP" class="carousel-item active container1">
+                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/ggj2bv7azyQ" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px;" allowfullscreen></iframe>
+                </div>
+                <div id="mistakes" class="carousel-item container1">
+                    <iframe class="responsive-iframe" width="200px" height="700px" class="d-block w-100" style="padding: 70px" src="https://www.youtube.com/embed/GCLMyXN-mXI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div id="lifeLong" class="carousel-item container1">
+                    <iframe class="responsive-iframe" width="200px" height="700px"class="d-block w-100" style="padding: 70px" src="https://www.youtube.com/embed/fv3R4onHTws" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div id="homeBuyer" class="carousel-item container1">
+                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/LMrLiIhb00A" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="200px" height="700px" class="d-block w-100" style="padding: 70px;" allowfullscreen></iframe>
+                </div>
+              
+            </div>
+        
+        </div>
+
+        <!--RESP-->
+        <div id="carouselExampleControls3" class="carousel slide RESP RESPSlides" data-interval="false">
+             <!--Selecting tool-->
+             <nav aria-label="Page navigation example">
+                
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne" onclick="function9()"> What is an RESP? </button></li>
+                    <button class="accordion-button " type="button"  style="color: white; text-align: center;" data-bs-target="#collapseOne" aria-expanded="false" id="video" aria-controls="collapseOne" onclick="function10()"> Canada Education Savings Grant </button></li>
+                    
+            </nav>
+            <div class="carousel-inner" id="portfolioCarousel">
+                <div id="RESP" class="carousel-item container1">
+                    <iframe class="responsive-iframe" width="200px" height="700px" class="d-block w-100" style="padding: 70px" src="https://www.youtube.com/embed/HQenRoBfmu4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div id="CESG" class="carousel-item container1">
+                    <iframe class="responsive-iframe" width="200px" height="700px" class="d-block w-100" style="padding: 70px" src="https://www.youtube.com/embed/AFNHAnD6R9c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+          
+        </div>
+
+
+        <script>
+
+           
+
+
+            // global variables
+            var vid1 = document.getElementById('TFSA')
+            var vid2 = document.getElementById('overcontributing').removeAttribute('autoplay')
+            var vid3 = document.getElementById('dividend').removeAttribute('autoplay')
+            
+            // var vid4 =
+            // var vid5 = 
+            // var vid6 = 
+            // var vid7 = 
+            // var vid8 = 
+            // var vid9 = 
+            // var vid10= 
+
+            function functionList(){
+            // to close All tabs 
+            // aria-expanded===false
+            //    if (document.getElementById('video').ontoggle = true){
+            //     document.getElementById('List1').classList.add("visually-hidden")
+            //    }
+            }
+            
+
+            //TFSA
+            function functionA() {
+                document.querySelector('.RRSP').classList.add('RRSPSlides')
+                document.querySelector('.RESP').classList.add('RESPSlides')
+                document.querySelector('.TFSA').classList.remove('TFSASlides')
+                // document.getElementById('List1').setAttribute("visibility, visible")
+             
+            }
+
+           function function1(){
+                document.getElementById('Mistakes').classList.remove('active')
+                document.getElementById('overcontributing').classList.remove('active')
+                document.getElementById('TFSA').classList.add('active')
+                document.getElementById('dividend').classList.remove('active')
+                // vid1.style.display = vid1.style.display === 'none'? '' : 'none';
+                
+            
+           }
+
+           function function2(){
+                document.getElementById('Mistakes').classList.add('active')
+                document.getElementById('overcontributing').classList.remove('active')
+                document.getElementById('TFSA').classList.remove('active')
+                document.getElementById('dividend').classList.remove('active')
+           }
+
+           function function3(){
+                document.getElementById('Mistakes').classList.remove('active')
+                document.getElementById('overcontributing').classList.add('active')
+                document.getElementById('TFSA').classList.remove('active')
+                document.getElementById('dividend').classList.remove('active')
+           }
+
+           function function4(){
+                document.getElementById('Mistakes').classList.remove('active')
+                document.getElementById('overcontributing').classList.remove('active')
+                document.getElementById('TFSA').classList.remove('active')
+                document.getElementById('dividend').classList.add('active')
+           }
+
+        // RRSP 
+            function functionB() {
+                document.querySelector('.TFSA').classList.add('TFSASlides')
+                document.querySelector('.RESP').classList.add('RESPSlides')
+                document.querySelector('.RRSP').classList.remove('RRSPSlides')
+            
+            }
+
+            function function5(){  
+                document.getElementById('RRSP').classList.add('active')
+                document.getElementById('lifeLong').classList.remove('active')
+                document.getElementById('homeBuyer').classList.remove('active')
+                document.getElementById('mistakes').classList.remove('active')
+            }
+
+            function function6 (){
+                document.getElementById('RRSP').classList.remove('active')
+                document.getElementById('lifeLong').classList.remove('active')
+                document.getElementById('homeBuyer').classList.remove('active')
+                document.getElementById('mistakes').classList.add('active')
+            }
+
+            function function7(){
+                document.getElementById('RRSP').classList.remove('active')
+                document.getElementById('lifeLong').classList.add('active')
+                document.getElementById('homeBuyer').classList.remove('active')
+                document.getElementById('mistakes').classList.remove('active')
+            }
+            
+            function function8(){
+                document.getElementById('RRSP').classList.remove('active')
+                document.getElementById('lifeLong').classList.remove('active')
+                document.getElementById('homeBuyer').classList.add('active')
+                document.getElementById('mistakes').classList.remove('active')
+            }
+
+        // RESP
+         
+         
+            function functionC() {
+                document.querySelector('.TFSA').classList.add('TFSASlides')
+                document.querySelector('.RRSP').classList.add('RRSPSlides')
+                document.querySelector('.RESP').classList.remove('RESPSlides')
+                document.getElementById('CESG').classList.remove('active')
+                document.getElementById('RESP').classList.add('active')
+            }
+           
+            function function9(){
+                document.getElementById('CESG').classList.remove('active')
+                document.getElementById('RESP').classList.add('active')
+            }
+
+            function function10(){
+                document.getElementById('CESG').classList.add('active')
+                document.getElementById('RESP').classList.remove('active')
+            }
+
+        </script>
+        <script src="script.js"></script>
 </body>
 
 </html>

@@ -19,7 +19,7 @@
 <body>
 
   <header>
-    <h1 class="abc">Financial Website</h1>
+    <h1 class="abc"><i>Essential Finance</i></h1>
   </header>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -40,7 +40,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link  li1" href="stockNews.html" style="color: white;">Stock
+            <a onclick="getArticles()" class="nav-link  li1" href="stockNews.html" style="color: white;">Stock
               News</a>
           </li>
           <li class="nav-item dropdown">
@@ -51,11 +51,12 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="flashcard.html">Flash Cards</a></li>
               <li><a class="dropdown-item" href="quizz.html">Quizz</a></li>
+              <li><a class="dropdown-item" href="videolectures.html">Video Lectures</a></li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link li1" href="videolectures.html" style="color: white;">video Lectures</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="contact.html" style="color: white;">Contact</a>
           </li>
@@ -67,26 +68,32 @@
   <section class="full-height test demo" id="section10">
     <div class="container">
       <div class="row">
-        <div class="col-4">
-          <ul>
-            <li class="inline-photo2 show-on-scroll  " style=" position: relative;
-                left: 30%;font-size: 30px; left: 0%;"> Get the Most Out of Life </li>
-            <li class="inline-photo3 show-on-scroll  " style=" position: relative;
-                left: 30%;font-size: 30px; "> Our Reputation Goes With It
-            </li>
-          </ul>
+        <!-- <div class="col-3"></div> -->
+        <div class="col-2" id="walletPicture">
         </div>
-        <div class="col-4">
-          <ul>
+            <!-- <h1 class="inline-photo2 show-on-scroll  " style=" 
+                font-size: 30px;">The solution to a financially secure future<h1> -->
+            <!-- <li class="inline-photo3 show-on-scroll  " style=" position: relative;
+               font-size: 30px; "> Bravo Financial Academy
+            </li> -->
+            <div class="col">
+            <marquee behavior="alternate" direction="up" width="100%"><marquee direction="left" style="margin-top: 100px;"><h2 id="homePageFont"> Solution to a Financially Secure Future</h2></marquee></marquee>
 
-            <li class="inline-photo2 show-on-scroll  " style=" position: relative;
-                        left: 30%;font-size: 30px; left: 10%;"> You're Worth It</li>
-            <li class="inline-photo3 show-on-scroll  " style=" position: relative;
-                        left: 30%;font-size: 30px; ">Ideal Choice</li>
+          <!-- </div>
+          <div class="col-2" id="sangokuPicture">
+          </div> -->
+        <!-- <div class="col-3"></div> -->
+        <!-- <div class="col-4">
+          <ul> -->
+
+            <!-- <li class="inline-photo2 show-on-scroll  " style=" position: relative;
+                        left: 30%;font-size: 30px; left: 10%;"> You're Worth It</li> -->
+            <!-- <li class="inline-photo3 show-on-scroll  " style=" position: relative;
+                        left: 30%;font-size: 30px; ">WE are the Solution</li>
           </ul>
 
-        </div>
-        <div class="col-3">
+        </div> -->
+        <!-- <div class="col-3">
           <ul>
             <li class="inline-photo2 show-on-scroll  " style=" position: relative;
                 left: 30%;font-size: 30px;left: 10%; "> Enhance Your Life </li>
@@ -94,22 +101,43 @@
                 left: 30%;font-size: 30px; "> Feel the Quality
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- <i class="arrow down Hero__arrow"></i> -->
-    <a href="#section02"><span></span>Scroll</a>
+    <a href="#section02"><span></span></a>
   </section>
   <section id="section02" class="demo test2" style="background-color: black;">
     <div class="container">
-      <div class="row">
-        <div class="col-3"> <video autoplay loop class="responsiveVideo" style="margin-top: 100px;">
+      <div class="row" style="width: fit-content;">
+        <div class="col-3"> <video id="globeResponsive" autoplay loop class="responsiveVideo"  >
             <source src="https://media.giphy.com/media/U4FkC2VqpeNRHjTDQ5/giphy.mp4" type="video/mp4">
           </video> </div>
         <div class="col-12">
+          <div class="card " style="   box-shadow: 0em 0em 5em 5em rgb(13 110 253 / 25%);
+           width: fit-content; color: white; border-color:rgb(0, 0, 0); background-color: rgb(0, 0, 0)">
+            <ul class="list-group list-group-flush" style="border-color: rgb(0, 2, 38) ">
+              <li class="list-group-item" style="padding:20px; background-color:rgb(0, 2, 38);text-align:center; ">Canadian household debt represented 177% of disposable income in 2019, up from 168% in 2018
+              </li>
+              <li class="list-group-item"style=" padding:20px; background-color: rgb(0, 1, 35);text-align:center;">While 65% of Canadians are keeping up with bills and payments, growing share are facing financial pressures.
+              </li>
+              <li class="list-group-item"style=" padding:20px; background-color: rgb(0, 1, 32);text-align:center;">1 in 6 Canadians (17%) say monthly spending exceeds income</li>
+              <li class="list-group-item"style=" padding:20px;background-color: rgb(0, 1, 35);text-align:center;">1 in 4 say they borrow to buy food or pay for daily expenses</li>
+
+            </ul>
+            <div class="card-footer"style=" background-color: rgb(0, 2, 38); text-align:center;border-color: rgb(6, 2, 70);">
+              Source: canada.ca
+            </div>
+          </div>
         </div>
 
       </div>
+    </div>
+    <!-- <div>ssss</div> -->
+    <div id="section11">
+    <a href="#"><span style="      top: 0px;
+      "></span></a>
+
     </div>
   </section>
 

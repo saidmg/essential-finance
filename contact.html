@@ -13,12 +13,106 @@
     <link rel="icon" href="./Assets/icon2.png" type="image/icon" sizes="16x16">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 
 <body>
+    <style>
+        body {
+            background: rgb(9, 11, 58) !important;
+            /* margin-bottom: 200px; */
+
+        }
+
+        .card {
+            background-color: transparent;
+            /* margin-top: 150px !important; */
+            /* margin-left: 10px; */
+        }
+
+        .image0 {
+            /* margin-top: 50px; */
+            transition: transform .8s;
+            z-index: 0;
+        }
+
+        .image0:hover {
+
+            -ms-transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+            z-index: 1;
+        }
+
+        #gitt {
+
+            height: 50px;
+            width: 40px;
+            font-size: 35px;
+            color: white !important;
+            margin-right: 0.2px;
+            margin-left: 1px;
+            margin-top: 20px;
+            margin-bottom: -20px;
+            transition: transform .8s;
+        }
+
+        #gitt:hover {
+            -ms-transform: scale(1.9);
+            -webkit-transform: scale(1.9);
+            transform: scale(1.9);
+        }
+
+        #head1 {
+            text-align: center;
+            /* font-size: 40px; */
+            color: white;
+            margin: 0px;
+            margin-top: 5%;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .full-height {
+            min-height: calc(100vh - 15.3rem)
+        }
+        .col-2{
+            width: 20%;
+        }
+        @media only screen and (max-width: 1000px) {
+            .col-2 {
+                width: 50%;
+            }
+            h2{font-size: 16px;}
+            .iconchange{font-size: 1px;}
+
+            #gitt{
+            font-size:30px;
+            /* height: 50px;
+            width: 40px; */
+            /* font-size: 35px; */
+            color: white !important;
+            margin-right: 0px;
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            transition: transform .8s;
+        }
+        }
+        a:hover,a{color: transparent;}
+      
+    </style>
     <header>
-        <h1 class="abc">Financial Website</h1>
+        <h1 class="abc">Essential Finance</h1>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -38,7 +132,8 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link li1" href="stockNews.html" style="color: white;">Stock
+                        <a onclick="getArticles()" class="nav-link  li1" href="stockNews.html"
+                            style="color: white;">Stock
                             News</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -47,13 +142,10 @@
                             KnowledgeBase
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="flashcard.html" >Flash Cards</a></li>
-                            <li><a class="dropdown-item " href="quizz.html" >Quizz</a></li>
-                            <!-- <li><a class="dropdown-item" href="#">Something else </a></li> -->
+                            <li><a class="dropdown-item " href="flashcard.html">Flash Cards</a></li>
+                            <li><a class="dropdown-item" href="quizz.html">Quizz</a></li>
+                            <li><a class="dropdown-item" href="videolectures.html">Video Lectures</a></li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  li1" href="videolectures.html" style="color: white;">video Lectures</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="contact.html" style="color: rgb(9, 11, 58) ;">Contact</a>
@@ -62,9 +154,135 @@
             </div>
         </div>
     </nav>
-
     <script src="script.js"></script>
+    <div class="container full-height " style="margin-top: 5%;">
+        <div class="row">
+            <h1 style="text-align: center;">Meet The Team</h1>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <div class="card  image0"style="margin-top: 30%;">
+                    <img src="./Assets/Fatih.jpg"
+                        style="margin:auto;margin-top: 2%; height:100px; width:100px; border-radius: 50%;">
+                    <div class="card-body">
+                        <div style="text-align: center;">
 
+                           
+
+                            <a class="iconchange" target="_blank" href="https://www.linkedin.com/in/fatih-sultan-ay-211689181/"> <i
+                                    id="gitt" class="fab fa-linkedin"></i> </a>
+
+
+                            <a class="iconchange" target="_blank" href="https://github.com/fatihay53"><i id="gitt"
+                                    class="fab fa-github-square"></i>
+                            </a>
+                            <a class="iconchange" target="_blank" href="mailto: f.sultanay@gmail.com"> <i id="gitt"
+                                class="fab fa-google-plus-g"></i></a>
+
+                            <h2>Fatih Ay</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class=" card image0" style="margin-top: 30%;">
+                    <img src="./Assets/Ilias.jpg"
+                        style="margin:auto;margin-top: 2%; height:100px; width:100px; border-radius: 50%;">
+
+                    <div class="card-body">
+                        <div style="text-align: center;">
+                            
+
+                            <a target="_blank" href="https://www.linkedin.com/in/ilias-c-a2594717a"> <i id="gitt"
+                                    class="fab fa-linkedin"></i> </a>
+
+
+                            <a target="_blank" href="https://github.com/iliasc8"><i id="gitt"
+                                    class="fab fa-github-square"></i>
+                            </a>
+                            <a target="_blank" href="mailto: ilias-c@gmail.com"> <i id="gitt" class="fab fa-google-plus-g"></i></a>
+
+                            <h2>Ilias Chowdhury</h2>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card image0"style="margin-top: 30%;">
+                    <img src="./Assets/Muhammad.jpg"
+                        style="margin:auto;margin-top: 2%; height:100px; width:100px; border-radius: 50%;">
+
+                    <div class="card-body">
+                        <div style="text-align: center;">
+                            
+                            <a target="_blank" href="https://www.linkedin.com/in/fatih-sultan-ay-211689181/"> <i
+                                    id="gitt" class="fab fa-linkedin"></i> </a>
+
+
+                            <a target="_blank" href="https://github.com/muhammadalim5"><i id="gitt"
+                                    class="fab fa-github-square"></i>
+                            </a>
+                            <a target="_blank" href="mailto: muhammadalim3435@gmail.com"> <i id="gitt"
+                                class="fab fa-google-plus-g"></i></a>
+                            <h2>Muhammad Alim</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card image0"style="margin-top: 30%;">
+                    <img src="./Assets/said.jpg"
+                        style="margin:auto;margin-top: 2%; height:100px; width:100px; border-radius: 50%;">
+                    <div class="card-body">
+                        <div style="text-align: center;">
+                            <div style="text-align: center;">
+                                
+                                <a target="_blank" href="https://www.linkedin.com/in/said-mghabghab/"> <i id="gitt"
+                                        class="fab fa-linkedin"></i> </a>
+
+
+                                <a target="_blank" href="https://github.com/saidmg"><i id="gitt"
+                                        class="fab fa-github-square"></i>
+                                </a>
+                                <a target="_blank" href="mailto: saidmghabghab@gmail.com"> <i id="gitt"
+                                    class="fab fa-google-plus-g"></i></a>
+                            </div>
+                            <h2>Said Mghabghab</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card image0"style="margin-top: 30%;">
+                    <img src="./Assets/Vithu.png"
+                        style="margin:auto;margin-top: 2%; height:100px; width:100px; border-radius: 50%;">
+                    <div class="card-body">
+                        <div style="text-align: center;">
+                            
+
+
+                            <a target="_blank" href="https://www.linkedin.com/in/vithushan-esan-3b636611a/"> <i
+                                    id="gitt" class="fab fa-linkedin"></i> </a>
+
+
+                            <a target="_blank" href="https://github.com/VithushanE"><i id="gitt"
+                                    class="fab fa-github-square"></i>
+                            </a>
+                            <a target="_blank" href="mailto: vithushanesan@gmail.com"> <i id="gitt"
+                                class="fab fa-google-plus-g"></i></a>
+                            <h2>Vithushan Esan</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+        <script>
+                // window.scrollTo(0,document.body.scrollHeight);
+        </script>
 </body>
 
 </html>
